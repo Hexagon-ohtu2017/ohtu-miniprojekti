@@ -1,6 +1,6 @@
-package Main;
+package hextex;
 
-public class java {
+public class Main {
     /**
      * @param args the command line arguments
      */
