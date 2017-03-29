@@ -1,5 +1,8 @@
 apply plugin: 'java'
 
+// Apply the application plugin to add support for building an application
+apply plugin: 'application'
+
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -27,3 +30,13 @@ dependencies {
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
     testCompile group: 'junit', name: 'junit', version: '4.10'
 }
+
+// Define the main class for the application
+mainClassName = 'HexTex'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'HexTex'
+    }
+}
+
