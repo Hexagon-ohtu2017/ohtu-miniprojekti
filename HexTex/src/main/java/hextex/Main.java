@@ -1,8 +1,10 @@
-public class HexTex {
+package hextex;
+
+public class Main {
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("JEE");
+        System.out.println("ÖRÖRÖR");
     }
 }

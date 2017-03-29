@@ -1,8 +1,5 @@
 apply plugin: 'java'
-
-// Apply the application plugin to add support for building an application
 apply plugin: 'application'
-
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -14,7 +11,7 @@ sourceCompatibility = '1.8'
 // prefer. In this case NetBeans will not add these tasks but you may rely on
 // your own implementation.
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'HexTex'
+    ext.mainClass = 'hextex.Main'
 }
 
 repositories {
@@ -31,12 +28,11 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
 }
 
-// Define the main class for the application
-mainClassName = 'HexTex'
+
+mainClassName = 'hextex.Main'
 
 jar {
-    manifest {
-        attributes 'Main-Class': 'HexTex'
-    }
+	manifest {
+		attributes 'Main-Class': 'Main'
+	}
 }
-
