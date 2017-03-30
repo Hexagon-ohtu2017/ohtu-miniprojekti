@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
+
 //sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -30,10 +31,16 @@ dependencies {
 }
 
 
+
+
 mainClassName = 'hextex.Main'
 
 jar {
 	manifest {
 		attributes 'Main-Class': 'Main'
 	}
+}
+
+run {
+    standardInput = System.in
 }
