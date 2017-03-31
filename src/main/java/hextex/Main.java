@@ -1,5 +1,8 @@
 package hextex;
+
 import hextex.io.ConsoleIO;
+import hextex.database.Database;
+
 import java.util.HashMap;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,11 +15,8 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
 
-        Connection connection = DriverManager.getConnection("jdbc:sqlite:tietokanta.db");
 
-        Statement statement = connection.createStatement();
-
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM Book");
+        Database database = new Database("jdbc:sqlite:test.db");
 
         ConsoleIO io = new ConsoleIO();
         String name = io.readLine("Give book's name");
