@@ -10,12 +10,12 @@ package hextex.references;
  * @author cocacoca
  */
 public class Book {
-    
+
     public String author;
     public String title;
     public int year;
     public String publisher;
-    
+
     public Book(String author, String title, int year, String publisher){
         this.author=author;
         this.title=title;
@@ -39,5 +39,5 @@ public class Book {
     }public String getPublisher(){
         return publisher;
     }
-    
+
 }

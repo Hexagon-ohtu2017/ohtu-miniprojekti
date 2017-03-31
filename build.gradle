@@ -27,7 +27,12 @@ dependencies {
     // You can read more about how to add dependency here:
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
     testCompile group: 'junit', name: 'junit', version: '4.10'
+
+    compile 'com.sparkjava:spark-core:2.3'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+
 }
+
 
 
 mainClassName = 'hextex.Main'
@@ -40,4 +45,36 @@ jar {
 
 run {
     standardInput = System.in
+}
+
+
+//DATABASE STUFF
+import groovy.sql.Sql
+
+configurations {
+    sqllite
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    sqllite 'org.xerial:sqlite-jdbc:3.8.9.1'
+}
+
+URLClassLoader loader = GroovyObject.class.classLoader
+configurations.sqllite.each { File file ->
+    loader.addURL(file.toURL())
+}
+
+Sql sql = Sql.newInstance('jdbc:sqlite:test.db', "org.sqlite.JDBC")
+
+task checkSql << {
+    sql.execute 'DROP TABLE BOOK'
+    sql.execute 'CREATE TABLE BOOK(name CHAR(50), pages INTEGER)'
+    sql.execute 'INSERT INTO BOOK VALUES ("Kirja", "200")'
+    sql.eachRow('SELECT * FROM sqlite_master') { row ->
+        logger.lifecycle row.toString()
+    }
 }
