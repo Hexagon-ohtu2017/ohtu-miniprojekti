@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hextex.references;
 
 /**
@@ -12,25 +7,31 @@ package hextex.references;
 public class Book {
 
     public String nameOfReference;
-    public String author;
+    public String singleAuthor;
     public String title;
     public int year;
     public String publisher;
 
-    public Book(String name, String author, String title, int year, String publisher) {
-        this.nameOfReference = name;
-        this.author = author;
+    public Book(String nameOfReference, String author, String title, int year, String publisher) {
+        this.nameOfReference = nameOfReference;
+        this.singleAuthor = author;
         this.title = title;
         this.year = year;
         this.publisher = publisher;
     }
 
-    public void setName(String name) {
-        this.nameOfReference = name;
+    /*
+    Not in use for now.
+    public Book(String nameOfReference, List<Author> authors, String title, int year, String publisher) {
+        this.nameOfReference = nameOfReference;
+        this.authors = authors;
+        this.title = title;
+        this.year = year;
+        this.publisher = publisher;
     }
-
-    public void setAuthor(String author) {
-        this.author = author;
+     */
+    public void setNameOfReference(String name) {
+        this.nameOfReference = name;
     }
 
     public void setTitle(String title) {
@@ -49,9 +50,6 @@ public class Book {
         return nameOfReference;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
     public String getTitle() {
         return title;
@@ -63,5 +61,24 @@ public class Book {
 
     public String getPublisher() {
         return publisher;
+    }
+
+    public String getBibtexName() {
+        /*
+        For multiple authors in a list. Currently not in use.
+        
+        StringBuilder authorsNames = new StringBuilder();
+        for (Author author : authors) {
+            authorsNames.append(author.getBibtexName()).append(" and ");
+        }
+        authorsNames.delete(authorsNames.length() - 5, authorsNames.length());
+        */
+
+        return "@book{" + nameOfReference + ",\n"
+                + "author = {" + singleAuthor + "},\n"
+                + "title = {" + title + "},\n"
+                + "year = {" + year + "},\n"
+                + "publisher = {" + publisher + "},\n"
+                + "}\n";
     }
 }
