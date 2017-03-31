@@ -4,17 +4,17 @@
 
 ## Dokumentaatio
 
-## 1. Sprintin User storyt ja hyväksymistestit
+## Ensimmäisen Sprintin User storyt ja hyväksymistestit
 
-###Käyttäjä pystyy generoimaan bibTex-tiedoston
+### Käyttäjä pystyy generoimaan bibTex-tiedoston
 
-####Hyväksymistestit
+#### Hyväksymistestit
 1. Viiteistä muodostetaan bibTex-tiedosto
 2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda
 
-###Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
+### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
 
-####Hyväksymistestit
+#### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus)
 
 2. Lisättävän viitteen oltava book-kategorian viite.
