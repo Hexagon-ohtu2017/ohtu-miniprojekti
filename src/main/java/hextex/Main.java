@@ -1,6 +1,5 @@
 package hextex;
 import hextex.io.WriteBibTeX;
-import hextex.references.Author;
 import hextex.references.Book;
 import java.io.IOException;
 import java.util.ArrayList;
