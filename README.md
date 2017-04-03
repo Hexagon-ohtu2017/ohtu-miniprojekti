@@ -8,9 +8,11 @@
 
 https://docs.google.com/document/d/1rOSL-ld9ft5-Zw1Se4O46TkJnRsS-eWm1bDstQH1Dlk/edit?ts=58dcf759
 
-### Ensimmäisen Sprintin User storyt ja hyväksymistestit
+### Ensimmäisen Sprint
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit#gid=0
+
+### User storyt ja hyväksymistestit
 
 #### Käyttäjä pystyy generoimaan bibTex-tiedoston
 
