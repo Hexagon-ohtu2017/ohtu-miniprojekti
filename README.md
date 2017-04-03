@@ -4,17 +4,23 @@
 
 ## Dokumentaatio
 
-## Ensimmäisen Sprintin User storyt ja hyväksymistestit
+### Product backlog
 
-### Käyttäjä pystyy generoimaan bibTex-tiedoston
+https://docs.google.com/document/d/1rOSL-ld9ft5-Zw1Se4O46TkJnRsS-eWm1bDstQH1Dlk/edit?ts=58dcf759
 
-#### Hyväksymistestit
+### Ensimmäisen Sprintin User storyt ja hyväksymistestit
+
+Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit#gid=0
+
+#### Käyttäjä pystyy generoimaan bibTex-tiedoston
+
+##### Hyväksymistestit
 1. Viiteistä muodostetaan bibTex-tiedosto
 2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda
 
-### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
+#### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
 
-#### Hyväksymistestit
+##### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus)
 
 2. Lisättävän viitteen oltava book-kategorian viite.
