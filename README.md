@@ -2,27 +2,29 @@
 
 [![Build Status](https://travis-ci.org/Hexagon-ohtu2017/ohtu-miniprojekti.svg?branch=master)](https://travis-ci.org/Hexagon-ohtu2017/ohtu-miniprojekti)
 
-## Dokumentaatio
+# Dokumentaatio
 
-### Product backlog
+## Product backlog
 
 https://docs.google.com/document/d/1rOSL-ld9ft5-Zw1Se4O46TkJnRsS-eWm1bDstQH1Dlk/edit?ts=58dcf759
 
-### Sprint 1
+## Sprint 1
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit#gid=0
 
+Burndown-käyrä: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
+
 ### User storyt ja hyväksymistestit
 
-#### Käyttäjä pystyy generoimaan bibTex-tiedoston
+##### Käyttäjä pystyy generoimaan bibTex-tiedoston
 
-##### Hyväksymistestit
+###### Hyväksymistestit
 1. Viiteistä muodostetaan bibTex-tiedosto
 2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda
 
-#### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
+##### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
 
-##### Hyväksymistestit
+###### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus)
 
 2. Lisättävän viitteen oltava book-kategorian viite.
