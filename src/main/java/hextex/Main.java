@@ -1,22 +1,22 @@
 package hextex;
+
+import hextex.io.ConsoleIO;
+import hextex.io.ConsoleInterface;
 import hextex.io.WriteBibTeX;
 import hextex.references.Book;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
+
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-//        System.out.println("JEE TÄÄ TOIMII!!");
-//        ConsoleIO io = new ConsoleIO();
-//        String name = io.readLine("Give book's name");
-//        System.out.println("Book's name is " + name);
-//        int pages = io.readInt("How many pages book have?");
-//        System.out.println("Book has " + pages + " pages");
-
+        
+        ConsoleInterface.run();
+        
+        /*
         String name = "Martin09";       
         String title = "Clean Code: A Handbook of Agile Software Craftsmanship";
         int year = 2008;
@@ -26,5 +26,6 @@ public class Main {
         List<Book> lib = new ArrayList<>();
         lib.add(book);
         WriteBibTeX.writeFile("asd.txt", lib);
+         */
     }
 }
