@@ -13,19 +13,9 @@ public class Main {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
+
         
         ConsoleInterface.run();
-        
-        /*
-        String name = "Martin09";       
-        String title = "Clean Code: A Handbook of Agile Software Craftsmanship";
-        int year = 2008;
-        String publisher = "Prentice Hall";
-
-        Book book = new Book(name, "Martin, Robert", title, year, publisher);
-        List<Book> lib = new ArrayList<>();
-        lib.add(book);
-        WriteBibTeX.writeFile("asd.txt", lib);
-         */
+       
     }
 }
