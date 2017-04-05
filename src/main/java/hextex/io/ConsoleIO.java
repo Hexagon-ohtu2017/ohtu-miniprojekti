@@ -16,7 +16,9 @@ public class ConsoleIO {
 
     public int readInt(String prompt) {
         System.out.println(prompt);
-        return Integer.parseInt(scanner.nextLine());
+        String result = scanner.nextLine();
+        return Integer.parseInt(result);
+
     }
 
     public String readLine(String prompt) {
