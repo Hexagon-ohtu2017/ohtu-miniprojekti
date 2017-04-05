@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-05T11:06:07" hostname="Aleksis-MBP" time="0.005">
+  <properties/>
+  <testcase name="writeBibTeXCorrectly" classname="hextex.io.WriteBibTeXTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -17,7 +17,7 @@ public class Main {
 //        int pages = io.readInt("How many pages book have?");
 //        System.out.println("Book has " + pages + " pages");
 
-        String name = "Martin09";       
+        String name = "Martin09";
         String title = "Clean Code: A Handbook of Agile Software Craftsmanship";
         int year = 2008;
         String publisher = "Prentice Hall";
