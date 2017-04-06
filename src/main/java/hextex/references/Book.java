@@ -4,7 +4,7 @@ package hextex.references;
  *
  * @author cocacoca
  */
-public class Book {
+public class Book implements Reference {
 
     public String nameOfReference;
     public String singleAuthor;
