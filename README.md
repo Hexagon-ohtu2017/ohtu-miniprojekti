@@ -15,13 +15,13 @@ Burndown-käyrä:https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5
 
 ### User storyt ja hyväksymistestit
 
-##### Käyttäjä pystyy selaamaan viitteitä
+#### Käyttäjä pystyy selaamaan viitteitä
 
 ###### Hyväksymistestit
 1. Käyttäjä voi valita viitteiden näyttämisen tekstikäyttöliittymässä.
 2. Olemassa olevat viitteet näytetään tekstikäyttöliittymässä.
 
-##### Käyttäjä pystyy lisäämään inproc-tyylisen viitteen
+#### Käyttäjä pystyy lisäämään inproc-tyylisen viitteen
 
 ###### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus).
@@ -32,7 +32,7 @@ Burndown-käyrä:https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5
 
 4. Viite luodaan, jos käyttäjä täyttää inproc-kategorian kaikki syötteet (author,title,year,book-title) ilman ääkkösiä.
 
-##### Käyttäjä pystyy lisäämään article-tyyppisen viitteen
+#### Käyttäjä pystyy lisäämään article-tyyppisen viitteen
 
 ###### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus).
@@ -43,7 +43,7 @@ Burndown-käyrä:https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5
 
 4. Viite luodaan, jos käyttäjä täyttää inproc-kategorian kaikki syötteet (author,title,journal,year,volume,pages) ilman ääkkösiä.
 
-##### Käyttäjä pystyy käyttää bibtex-tiedostoaan yhdessä latex-dokumentin kanssa
+#### Käyttäjä pystyy käyttää bibtex-tiedostoaan yhdessä latex-dokumentin kanssa
 
 ###### Hyväksymistestit
 1. Dokumentin kääntämisen jälkeen tiedostossa ei yhtään [?]-merkkejä.
@@ -57,13 +57,13 @@ Burndown-käyrä: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF
 
 ### User storyt ja hyväksymistestit
 
-##### Käyttäjä pystyy generoimaan bibTex-tiedoston
+#### Käyttäjä pystyy generoimaan bibTex-tiedoston
 
 ###### Hyväksymistestit
 1. Viiteistä muodostetaan bibTex-tiedosto
 2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda
 
-##### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
+#### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
 
 ###### Hyväksymistestit
 1. Viitettä ei luoda jos käyttäjän syötteessä on ääkkösiä.(Annetaan virheilmoitus)
