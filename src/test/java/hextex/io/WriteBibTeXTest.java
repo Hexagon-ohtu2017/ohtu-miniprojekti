@@ -5,6 +5,7 @@
  */
 package hextex.io;
 import hextex.references.Book;
+import hextex.references.Reference;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -19,7 +20,7 @@ import java.io.FileReader;
 
 
 public class WriteBibTeXTest {
-    private ArrayList<Book> lib;
+    private ArrayList<Reference> lib;
 
     public WriteBibTeXTest() {
       String refName = "TT17";

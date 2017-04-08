@@ -1,0 +1,7 @@
+@article{ok,
+author = {ok},
+title = {ok},
+booktitle = {ok},
+year = {3},
+}
+
