@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\HexTex.jar
+set CLASSPATH=%APP_HOME%\lib\HexTex.jar;%APP_HOME%\lib\mysql-connector-java-5.1.6.jar
 
 @rem Execute HexTex
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %HEX_TEX_OPTS%  -classpath "%CLASSPATH%" hextex.Main %CMD_LINE_ARGS%
