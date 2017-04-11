@@ -16,7 +16,7 @@ public class Inproceeding implements Reference{
     private String title;
     private String bookTitle;
     private int year;
-    
+
     public Inproceeding(String name, String author, String title , String booktitle, int year) {
         this.nameOfReference = name;
         this.author = author;
@@ -28,19 +28,19 @@ public class Inproceeding implements Reference{
     public void setAuthor(String newAuthor) {
         author = newAuthor;
     }
-    
+
     public String getAuthor() {
         return author;
     }
-    
+
     public void setTitle(String newTitle) {
         title = newTitle;
     }
-    
+
     public String getTitle() {
         return title;
     }
-    
+
     public void setBookTitle(String newBookTitle) {
         bookTitle = newBookTitle;
     }
@@ -50,11 +50,11 @@ public class Inproceeding implements Reference{
     public void setName(String name) {
         nameOfReference = name;
     }
-    
+
     public void setYear(int newYear) {
         year = newYear;
     }
-    
+
     public int getYear() {
         return year;
     }
@@ -65,12 +65,12 @@ public class Inproceeding implements Reference{
 
     @Override
     public String getBibtexName() {
-                return "@article{" + nameOfReference + ",\n"
+                return "@inproceeding{" + nameOfReference + ",\n"
                 + "author = {" + author + "},\n"
                 + "title = {" + title + "},\n"
-                + "booktitle = {" + bookTitle + "},\n"      
+                + "booktitle = {" + bookTitle + "},\n"
                 + "year = {" + year + "},\n"
                 + "}\n";
     }
-    
+
 }
