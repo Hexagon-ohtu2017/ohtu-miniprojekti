@@ -12,7 +12,7 @@ public class Database {
 
   private String databaseAddress;
 
-  public Database() throws SQLException {
+  public Database() {
     this.databaseAddress = "jdbc:mysql://localhost:3306/mysql";
     init();
   }

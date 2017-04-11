@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-09T14:35:41" hostname="Aleksis-MBP" time="0.004">
+<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-11T08:55:58" hostname="da5-cs-b221-27" time="0.021">
   <properties/>
-  <testcase name="writeBibTeXCorrectly" classname="hextex.io.WriteBibTeXTest" time="0.004"/>
+  <testcase name="writeBibTeXCorrectly" classname="hextex.io.WriteBibTeXTest" time="0.021"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
