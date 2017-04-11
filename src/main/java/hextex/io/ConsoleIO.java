@@ -15,14 +15,27 @@ public class ConsoleIO {
     }
 
     public int readInt(String prompt) {
-        System.out.println(prompt);
-        String result = scanner.nextLine();
-        return Integer.parseInt(result);
+        while (true) {
 
+            System.out.println(prompt);
+            String result = scanner.nextLine();
+            try {
+                int number = Integer.parseInt(result);
+                return number;
+            } catch (NumberFormatException e) {
+                System.out.println("Value must be a number!");
+            }
+        }
     }
 
     public String readLine(String prompt) {
-        System.out.println(prompt);
-        return scanner.nextLine();
+        while (true) {
+            System.out.println(prompt);
+            String input = scanner.nextLine();
+            if (!input.isEmpty()) {
+                return input;
+            }
+            System.out.println("Value cannot be empty!");
+        }
     }
 }
