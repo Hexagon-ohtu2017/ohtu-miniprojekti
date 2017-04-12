@@ -8,6 +8,15 @@
 
 https://docs.google.com/spreadsheets/d/19EOMSb2dqar0gfmUwl0az7KPGXTaGRU-vQGXSTE0a00/edit?usp=sharing
 
+## Sprint 3
+
+Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
+Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
+
+### User storyt ja hyväksymistestit
+
+
+
 ## Sprint 2
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
