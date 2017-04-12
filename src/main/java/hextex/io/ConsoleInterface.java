@@ -34,6 +34,11 @@ public class ConsoleInterface {
                 Reference reference = createNewReference(io);
                 while (true) {
                     command = io.readLine("Commands: [new] , [bibtex] , [list], [help], [back]");
+                    if (command.equals("new")) {
+                      System.out.println("Create a new reference!");
+                      Reference ref = createNewReference(io);
+                    }
+
                     if (command.equals("bibtex")) {
                         String fileName = io.readLine("Please give a name of the BibTeX file you wish to be created");
                         List<Reference> references = database.findAllReferences();
