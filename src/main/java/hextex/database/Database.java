@@ -17,7 +17,7 @@ public class Database {
   private InproceedingDao inproceedingDao;
 
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-   static final String DB_URL = "jdbc:mysql://localhost/whoah?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+   static final String DB_URL = "jdbc:mysql://127.0.0.1/whoah?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 
    static final String USER = "root";
    static final String PASS = "hexagonista";
