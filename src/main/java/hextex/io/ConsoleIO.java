@@ -2,11 +2,11 @@ package hextex.io;
 
 import java.util.Scanner;
 
-public class ConsoleIO {
+public class ConsoleIO implements IO{
 
     private Scanner scanner;
 
-    public ConsoleIO() {
+    public ConsoleIO()  {
         this.scanner = new Scanner(System.in);
     }
 

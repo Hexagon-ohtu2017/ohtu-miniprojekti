@@ -5,28 +5,46 @@
  */
 package hextex.io;
 
+import hextex.inmemory.InMemoryReferenceDao;
 import hextex.references.Article;
 import hextex.references.Book;
-import hextex.references.Inproceeding;
+import hextex.references.Inproceedings;
 import hextex.references.Reference;
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author tuletule
  */
 public class ConsoleInterface {
+    
+    private InMemoryReferenceDao dao;
+    private IO io;
+    
+    public ConsoleInterface(IO io){
+        this.io =io;
+    }
 
-    public static void run() throws IOException {
-        ConsoleIO io = new ConsoleIO();
+    public void run() throws IOException {
+        dao = new InMemoryReferenceDao();
+        
         while (true) {
             System.out.println("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [help] , [quit]");
+            String command = io.readLine("Commands: [new] , [list] , [help] , [quit]");
             if (command.equals("new")) {
                 System.out.println("Create a new reference!");
                 Reference reference = createNewReference(io);
+                dao.add(reference);
                 while (true) {
-                    command = io.readLine("Commands: [new] , [bibtex] , [help], [back]");
+                    command = io.readLine("Commands: [new] , [bibtex] , [list], [help], [back]");
+                    if (command.equals("new")) {
+                      System.out.println("Create a new reference!");
+                      Reference ref = createNewReference(io);
+                      dao.add(ref);
+                    }
+
                     if (command.equals("bibtex")) {
                         String fileName = io.readLine("Please give a name of the BibTeX file you wish to be created");
                         WriteBibTeX.writeFile(fileName, reference);
@@ -37,28 +55,36 @@ public class ConsoleInterface {
                             }
                             if (command.equals("help")) {
                                 System.out.println("type new if you want to create new reference");
+                                System.out.println("type list if you want to list all your references");
                                 System.out.println("type back if you want to return to main menu");
                             }
                             if (command.equals("new")) {
                                 break;
                             }
-                           
                         }
 
                     }
-                    
+
+                    if(command.equals("list")) {
+                      this.printAllReferences();
+                    }
+
                     if (command.equals("help")) {
                         System.out.println("type new to create new reference");
                         System.out.println("type bibtex to create bibtex file for reference you created");
                         System.out.println("type back if you want to return to main menu");
                     }
-                    
+
                     if (command.equals("back")) {
                         break;
                     }
 
                 }
 
+            }
+
+            if(command.equals("list")) {
+             this.printAllReferences();
             }
 
             if (command.equals("help")) {
@@ -75,17 +101,16 @@ public class ConsoleInterface {
         //System.out.println(Integer.class.isInstance(5));
     }
 
-    public static Book createBook(ConsoleIO io) {
+    public Book createBook(IO io) {
         String author = io.readLine("Book's author(s) (format: 'Last, First and Last, First and...'):");
         String title = io.readLine("Book's title:");
         int year = io.readInt("Year of publishing:");
         String publisher = io.readLine("Publisher:");
         String referenceName = io.readLine("Please give a name for the reference:");
-
         return new Book(referenceName, author, title, year, publisher);
     }
 
-    public static Article createArticle(ConsoleIO io) {
+    public Article createArticle(IO io){
         String author = io.readLine("Article's author(s) (format: 'Last, First and Last, First and...'):");
         String title = io.readLine("Article's title:");
         String journal = io.readLine("Article's journal:");
@@ -93,24 +118,24 @@ public class ConsoleInterface {
         String page = io.readLine("Article's pages:");
         int year = io.readInt("Year of publishing:");
         String referenceName = io.readLine("Please give a name for the reference:");
-
         return new Article(referenceName, author, title, journal, volume, page, year);
 
     }
 
-    public static Inproceeding createInproceeding(ConsoleIO io) {
+    public Inproceedings createInproceeding(IO io){
         String author = io.readLine("Inproceeding's author(s) (format: 'Last, First and Last, First and...'):");
         String title = io.readLine("Inproceeding's title:");
-        String bookTitle = io.readLine("Inproceeding's book's title:");
+        String bookTitle = io.readLine("Inproceedings' book's title:");
         int year = io.readInt("Year of publishing:");
         String referenceName = io.readLine("Please give a name for the reference:");
-        return new Inproceeding(referenceName, author, title, bookTitle, year);
+       
+        return new Inproceedings(referenceName, author, title, bookTitle, year);
     }
 
-    public static Reference createNewReference(ConsoleIO io) {
+    public Reference createNewReference(IO io) {
         Reference reference;
         while (true) {
-            String command = io.readLine("Select type : [book] [article] [inproceeding]");
+            String command = io.readLine("Select type : [book] [article] [inproceedings]");
             if (command.equals("book")) {
                 reference = createBook(io);
                 break;
@@ -119,13 +144,21 @@ public class ConsoleInterface {
                 reference = createArticle(io);
                 break;
             }
-            if (command.equals("inproceeding")) {
+            if (command.equals("inproceedings")) {
                 reference = createInproceeding(io);
                 break;
             }
         }
         System.out.println("Reference was succesfully created!");
         return reference;
+    }
+
+    public void printAllReferences() {
+        List<Reference> references = this.dao.listAll();
+        System.out.println("References: ");
+        for (Reference ref : references) {
+            System.out.println("\t" + ref.getEasyName() + "\n");
+        }
     }
 
 }

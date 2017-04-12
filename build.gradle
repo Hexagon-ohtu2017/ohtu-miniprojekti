@@ -1,8 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'jacoco'
 //sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+project.ext {
+    cucumberVersion = '1.2.5'
+    junitVersion = '4.12'
+}
 
 // NetBeans will automatically add "run" and "debug" tasks relying on the
 // "mainClass" property. You may however define the property prior executing
@@ -26,16 +30,23 @@ dependencies {
     // TODO: Add dependencies here ...
     // You can read more about how to add dependency here:
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
+    testCompile 'info.cukes:cucumber-java:' + cucumberVersion
+    testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
+    testCompile 'junit:junit:' + junitVersion
     testCompile group: 'junit', name: 'junit', version: '4.10'
 }
 
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
 
 mainClassName = 'hextex.Main'
 
 jar {
-	manifest {
-		attributes 'Main-Class': 'hextex.Main'
-	}
+    manifest {
+        attributes 'Main-Class': 'hextex.Main'
+    }
 }
 
 run {
