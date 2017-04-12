@@ -70,7 +70,7 @@ public class Database {
           Class.forName("com.mysql.jdbc.Driver");
           com.mysql.jdbc.jdbc2.optional.MysqlDataSource ds
         = new com.mysql.jdbc.jdbc2.optional.MysqlDataSource();
-          ds.setServerName("localhost");
+          ds.setServerName("127.0.0.1");
           ds.setPortNumber(3306);
           ds.setDatabaseName("bibdb");
           ds.setUser("root");
