@@ -35,8 +35,8 @@ public class Database {
 
         try (Connection conn = getConnection()) {
             Statement st = conn.createStatement();
-            //String sql = "USE mysql";
-            //st.executeUpdate(sql);
+            String sql = "CREATE DATABASE hei;";
+            st.executeUpdate(sql);
 
             for (String lause : lauseet) {
                 System.out.println("Running command >> " + lause);
@@ -72,7 +72,7 @@ public class Database {
         = new com.mysql.jdbc.jdbc2.optional.MysqlDataSource();
           ds.setServerName("127.0.0.1");
           ds.setPortNumber(3306);
-          ds.setDatabaseName("bibdb");
+          //ds.setDatabaseName("bibdb");
           ds.setUser("root");
           ds.setPassword("hexagonista");
 
