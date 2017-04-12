@@ -73,4 +73,10 @@ public class Inproceeding implements Reference{
                 + "}\n";
     }
 
+    @Override
+    public String getEasyName() {
+      return "Inproceeding: (reference: " + nameOfReference + ", author: " + author + ", title:"
+            + title + ", book title: " + bookTitle + ", year: " + year + ")";
+    }
+
 }

@@ -10,7 +10,8 @@ package hextex.references;
  * @author omistaja
  */
 public interface Reference {
-    
+
     public String getName();
     public String getBibtexName();
+    public String getEasyName();
 }

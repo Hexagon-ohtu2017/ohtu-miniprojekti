@@ -28,12 +28,12 @@ public class ConsoleInterface {
         this.database = new Database();
         while (true) {
             System.out.println("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [help] , [quit]");
+            String command = io.readLine("Commands: [new] , [list] , [help] , [quit]");
             if (command.equals("new")) {
                 System.out.println("Create a new reference!");
                 Reference reference = createNewReference(io);
                 while (true) {
-                    command = io.readLine("Commands: [new] , [bibtex] , [help], [back]");
+                    command = io.readLine("Commands: [new] , [bibtex] , [list], [help], [back]");
                     if (command.equals("bibtex")) {
                         String fileName = io.readLine("Please give a name of the BibTeX file you wish to be created");
                         List<Reference> references = database.findAllReferences();
@@ -50,9 +50,12 @@ public class ConsoleInterface {
                             if (command.equals("new")) {
                                 break;
                             }
-
                         }
 
+                    }
+
+                    if(command.equals("list")) {
+                      this.printAllReferences();
                     }
 
                     if (command.equals("help")) {
@@ -67,6 +70,10 @@ public class ConsoleInterface {
 
                 }
 
+            }
+
+            if(command.equals("list")) {
+              this.printAllReferences();
             }
 
             if (command.equals("help")) {
@@ -135,6 +142,14 @@ public class ConsoleInterface {
         }
         System.out.println("Reference was succesfully created!");
         return reference;
+    }
+
+    public void printAllReferences() throws SQLException {
+        List<Reference> references = this.database.findAllReferences();
+        System.out.println("References: ");
+        for (Reference ref : references) {
+            System.out.println("\t" + ref.getEasyName() + "\n");
+        }
     }
 
 }

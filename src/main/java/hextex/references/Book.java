@@ -66,7 +66,7 @@ public class Book implements Reference {
     public String getBibtexName() {
         /*
         For multiple authors in a list. Currently not in use.
-        
+
         StringBuilder authorsNames = new StringBuilder();
         for (Author author : authors) {
             authorsNames.append(author.getBibtexName()).append(" and ");
@@ -80,5 +80,11 @@ public class Book implements Reference {
                 + "year = {" + year + "},\n"
                 + "publisher = {" + publisher + "},\n"
                 + "}\n";
+    }
+
+    @Override
+    public String getEasyName() {
+      return "Book: (reference: " + nameOfReference + ", author: " + singleAuthor + ", title:"
+            + title + ", year: " + year + ", publisher: "+ publisher + ")";
     }
 }

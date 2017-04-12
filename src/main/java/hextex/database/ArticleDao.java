@@ -24,7 +24,7 @@ public class ArticleDao implements Dao<Article, Integer> {
     Statement stmt = connection.createStatement();
 
     String kysely = "INSERT INTO Article (reference, title, author, journal, volume, pages, year) VALUES"
-            + "('" + reference + "', "  + title + "', '" + author + "', '"
+            + "('" + reference + "', '"  + title + "', '" + author + "', '"
                 + journal + "', '" + volume + "', '" + pages + "', '" + year + "');";
 
     stmt.execute(kysely);
