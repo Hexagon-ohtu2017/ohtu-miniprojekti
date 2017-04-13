@@ -10,14 +10,14 @@ https://docs.google.com/spreadsheets/d/19EOMSb2dqar0gfmUwl0az7KPGXTaGRU-vQGXSTE0
 
 ## Sprint 3
 
-<<<<<<< HEAD
+
 ### User storyt ja hyväksymistestit
 
 
-#### Viittetiä ei unohdeta kun sovellus suljetaan
+#### Viitteitä ei unohdeta kun sovellus suljetaan
 
 ###### Hyväksymistestit
-1.Käyttäjä voi selata edellisillä käyttökerroillaan tekemiään viitteitä
+1. Käyttäjä voi selata edellisillä käyttökerroillaan tekemiään viitteitä
 
 #### Viiteavain on automaattisesti generoitu
 
@@ -42,7 +42,7 @@ sama käytäntö kuin yllä, esim LuuVih2017a.
 
 1. Käyttäjän valitessa viitteen poisto, viite poistetaan tiedostosta
 
-##
+
 =======
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
 Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
@@ -52,13 +52,12 @@ Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2i
 
 
 ## Sprint 2
->>>>>>> e9555de0106724f06da1beb23fe8b0e3221e4147
+
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
 Burndown:https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit#gid=0
 
 
-##Sprint 2
 
 ### User storyt ja hyväksymistestit
 
