@@ -50,7 +50,6 @@ public class Book implements Reference {
         return nameOfReference;
     }
 
-
     public String getTitle() {
         return title;
     }
@@ -72,7 +71,7 @@ public class Book implements Reference {
             authorsNames.append(author.getBibtexName()).append(" and ");
         }
         authorsNames.delete(authorsNames.length() - 5, authorsNames.length());
-        */
+         */
 
         return "@book{" + nameOfReference + ",\n"
                 + "author = {" + singleAuthor + "},\n"
@@ -80,5 +79,11 @@ public class Book implements Reference {
                 + "year = {" + year + "},\n"
                 + "publisher = {" + publisher + "},\n"
                 + "}\n";
+    }
+
+    @Override
+    public String getEasyName() {
+        return "Book: (reference: " + nameOfReference + ", author: " + singleAuthor + ", title:"
+                + title + ", year: " + year + ", publisher: " + publisher + ")";
     }
 }

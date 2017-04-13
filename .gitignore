@@ -1,3 +1,5 @@
-/HexTex/build/
+.gradle/
+build/
 gradle.properties
 /references/nbproject/private/
+.nb-properties/

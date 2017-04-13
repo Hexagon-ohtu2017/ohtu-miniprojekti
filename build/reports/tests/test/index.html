@@ -20,25 +20,25 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">10</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">4</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.004s</div>
+<div class="counter">0.062s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">55%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,13 +58,49 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Packages</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Classes</a>
+<a href="#tab1">Ignored tests</a>
+</li>
+<li>
+<a href="#tab2">Packages</a>
+</li>
+<li>
+<a href="#tab3">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html">Scenario: a new named bibtex is succesfully created with references</a>.
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html#When name &quot;tiedostonimi&quot; and references are given">When name &quot;tiedostonimi&quot; and references are given</a>
+</li>
+<li>
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html">Scenario: a new named bibtex is succesfully created with references</a>.
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html#classMethod">classMethod</a>
+</li>
+<li>
+<a href="classes/Scenario%233a%2320creation%2320succesfull%2320with%2320proper%2320fields%2320title%2320author%2320year%2320publisher%2320reference.html">Scenario: creation succesfull with proper fields title author year publisher reference</a>.
+<a href="classes/Scenario%233a%2320creation%2320succesfull%2320with%2320proper%2320fields%2320title%2320author%2320year%2320publisher%2320reference.html#Then a new book is created">Then a new book is created</a>
+</li>
+<li>
+<a href="classes/Scenario%233a%2320creation%2320succesfull%2320with%2320proper%2320fields%2320title%2320author%2320year%2320publisher%2320reference.html">Scenario: creation succesfull with proper fields title author year publisher reference</a>.
+<a href="classes/Scenario%233a%2320creation%2320succesfull%2320with%2320proper%2320fields%2320title%2320author%2320year%2320publisher%2320reference.html#classMethod">classMethod</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
+<h2>Ignored tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html">Scenario: a new named bibtex is succesfully created with references</a>.
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html#Then a new bibtex file is created">Then a new bibtex file is created</a>
+</li>
+</ul>
+</div>
+<div id="tab2" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -78,6 +114,16 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="failures">
+<a href="packages/default-package.html">default-package</a>
+</td>
+<td>8</td>
+<td>4</td>
+<td>1</td>
+<td>0.062s</td>
+<td class="failures">42%</td>
+</tr>
 <tr>
 <td class="success">
 <a href="packages/hextex.html">hextex</a>
@@ -95,13 +141,13 @@
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab3" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -116,6 +162,24 @@
 </thead>
 <tbody>
 <tr>
+<td class="failures"/>
+<a href="classes/Scenario%233a%2320a%2320new%2320named%2320bibtex%2320is%2320succesfully%2320created%2320with%2320references.html">Scenario: a new named bibtex is succesfully created with references</a>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0.062s</td>
+<td class="failures">33%</td>
+</tr>
+<tr>
+<td class="failures"/>
+<a href="classes/Scenario%233a%2320creation%2320succesfull%2320with%2320proper%2320fields%2320title%2320author%2320year%2320publisher%2320reference.html">Scenario: creation succesfull with proper fields title author year publisher reference</a>
+<td>4</td>
+<td>2</td>
+<td>0</td>
+<td>0s</td>
+<td class="failures">50%</td>
+</tr>
+<tr>
 <td class="success"/>
 <a href="classes/hextex.MainTest.html">hextex.MainTest</a>
 <td>1</td>
@@ -126,11 +190,20 @@
 </tr>
 <tr>
 <td class="success"/>
+<a href="classes/hextex.RunCukesTest.html">hextex.RunCukesTest</a>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>-</td>
+<td class="success">-</td>
+</tr>
+<tr>
+<td class="success"/>
 <a href="classes/hextex.io.WriteBibTeXTest.html">hextex.io.WriteBibTeXTest</a>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -144,7 +217,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 3.4.1</a> at 8.4.2017 12:23:36</p>
+<a href="http://www.gradle.org">Gradle 3.4.1</a> at Apr 12, 2017 5:25:36 PM</p>
 </div>
 </div>
 </body>

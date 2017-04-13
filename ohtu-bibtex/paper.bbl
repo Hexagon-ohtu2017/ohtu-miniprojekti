@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{SWEBOK}
+A.~Abram, J.~W. More, B.~Pierre, and D.~Robert, editors.
+\newblock {\em Guide to the Software Engineering Body of Knownledge}.
+\newblock IEEE Computer Society, 2004.
+
+\bibitem{BA04}
+K.~Beck and C.~Andres.
+\newblock {\em Extreme Programming Explained: Embrace Change (2nd Edition)}.
+\newblock Addison-Wesley Professional, 2004.
+
+\bibitem{Begel_2008}
+A.~Begel and B.~Simon.
+\newblock Struggles of new college graduates in their first software
+  development job.
+\newblock In {\em Proceedings of the SIGCSE '08}. ACM, 2008.
+
+\bibitem{fox}
+A.~Fox and D.~Patterson.
+\newblock Crossing the software education chasm.
+\newblock {\em Communications of ACM}, 55(5):44--49, May 2012.
+
+\bibitem{Martin09}
+R.~C. Martin.
+\newblock {\em Clean Code: A Handbook of Agile Software Craftsmanship}.
+\newblock Prentice Hall, 2008.
+
+\bibitem{royce70}
+W.~Royce.
+\newblock Managing the development of large software systems.
+\newblock In {\em Proceedings of IEEE WESCON 26}. TeX Users Group, August 1970.
+
+\bibitem{scrum}
+K.~Schwaber and M.~Beedle.
+\newblock {\em {Agile Software Development with SCRUM}}.
+\newblock Prentice Hall, 2002.
+
+\end{thebibliography}

@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hextex.references;
+package hextex.io;
 
 /**
  *
- * @author omistaja
+ * @author ilarilai
  */
-public interface Reference {
-    
-    public String getName();
-    public String getBibtexName();
-    public String getEasyName();
+public interface IO {
 
+    void print(String toPrint);
+
+    int readInt(String prompt);
+
+    String readLine(String prompt);
 }
