@@ -8,10 +8,46 @@
 
 https://docs.google.com/spreadsheets/d/19EOMSb2dqar0gfmUwl0az7KPGXTaGRU-vQGXSTE0a00/edit?usp=sharing
 
-## Sprint 2
+## Sprint 3
+
+### User storyt ja hyväksymistestit
+
+
+#### Viittetiä ei unohdeta kun sovellus suljetaan
+
+###### Hyväksymistestit
+1.Käyttäjä voi selata edellisillä käyttökerroillaan tekemiään viitteitä
+
+#### Viiteavain on automaattisesti generoitu
+
+* Tapahtuu muodossa sukunimen 3 ensimmäistä kirjainta ja vuosi esim Vih2017.
+Mikäli samana vuonna on useampi teos, perään aakoset, esim Vih2017a.
+Jos teoksella useampi tekijä, sukunimet peräkkäin ja useamman teoksen tapauksessa
+sama käytäntö kuin yllä, esim LuuVih2017a.
+
+###### Hyväksymistestit
+?
+
+#### Teokselle voidaan lisätä useampi kirjailija
+
+###### Hyväksymistestit
+
+1. Käyttäjän syöttäessä 2 kirjailijaa teokselle, näkyvät molemmat teosta selattaessa
+2. Molemmat syötetyistä kirjailijoista näkyvät teoksen automaattisesti generoidussa viiteavaimessa
+
+#### Käyttäjä pystyy poistamaan viitteen
+
+###### Hyväksymistestit
+
+1. Käyttäjän valitessa viitteen poisto, viite poistetaan tiedostosta
+
+##
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
 Burndown:https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit#gid=0
+
+
+##Sprint 2
 
 ### User storyt ja hyväksymistestit
 
