@@ -10,9 +10,10 @@ https://docs.google.com/spreadsheets/d/19EOMSb2dqar0gfmUwl0az7KPGXTaGRU-vQGXSTE0
 
 ## Sprint 3
 
+Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
+Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
 
 ### User storyt ja hyväksymistestit
-
 
 #### Viitteitä ei unohdeta kun sovellus suljetaan
 
@@ -27,7 +28,7 @@ Jos teoksella useampi tekijä, sukunimet peräkkäin ja useamman teoksen tapauks
 sama käytäntö kuin yllä, esim LuuVih2017a.
 
 ###### Hyväksymistestit
-?
+1. Uuden viitteen luonti generoi automaattisesti sille oikean avaimen.
 
 #### Teokselle voidaan lisätä useampi kirjailija
 
@@ -41,13 +42,6 @@ sama käytäntö kuin yllä, esim LuuVih2017a.
 ###### Hyväksymistestit
 
 1. Käyttäjän valitessa viitteen poisto, viite poistetaan tiedostosta
-
-
-=======
-Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
-Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
-
-### User storyt ja hyväksymistestit
 
 
 
