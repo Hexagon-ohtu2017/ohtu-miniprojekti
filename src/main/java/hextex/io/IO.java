@@ -16,4 +16,6 @@ public interface IO {
     int readInt(String prompt);
 
     String readLine(String prompt);
+    
+    String readAuthors(String prompt);
 }

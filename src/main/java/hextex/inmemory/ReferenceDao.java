@@ -15,4 +15,5 @@ import java.util.List;
 public interface ReferenceDao {
     List<Reference> listAll();
     void add(Reference reference);
+    void delete(String key);
 }

@@ -11,22 +11,22 @@ package hextex.references;
  */
 public class Article implements Reference {
 
-    private String nameOfReference;
     private String author;
     private String title;
     private String journal;
     private int volume;
     private String pages;
     private int year;
+    private String key;
 
-    public Article(String name, String author, String title, String journal, int volume,
-            String pages, int year) {
-        this.nameOfReference = name;
+    public Article(String author, String title, String journal, int volume,
+            String pages, int year, String key) {
         this.author = author;
         this.journal = journal;
         this.volume = volume;
         this.pages = pages;
         this.year = year;
+        this.key = key;
     }
 
     public String getAuthor() {
@@ -69,18 +69,9 @@ public class Article implements Reference {
         return year;
     }
 
-    public void setName(String newName) {
-        nameOfReference = newName;
-    }
-
-    @Override
-    public String getName() {
-        return nameOfReference;
-    }
-
     @Override
     public String getBibtexName() {
-        return "@article{" + nameOfReference + ",\n"
+        return "@article{" + key + ",\n"
                 + "author = {" + author + "},\n"
                 + "title = {" + title + "},\n"
                 + "journal = {" + journal + "},\n"
@@ -92,9 +83,13 @@ public class Article implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Article: (reference: " + nameOfReference + ", author: " + author + ", title:"
+        return "Article: (reference: " + key + ", author: " + author + ", title:"
                 + title + ", journal: " + journal + ", volume: "
                 + volume + ", pages: " + pages + ", year: " + year + ")";
     }
 
+    @Override
+    public String getKey() {
+        return this.key;
+    }
 }

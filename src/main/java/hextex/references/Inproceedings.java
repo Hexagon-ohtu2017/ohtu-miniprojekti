@@ -11,18 +11,18 @@ package hextex.references;
  */
 public class Inproceedings implements Reference {
 
-    private String nameOfReference;
     private String author;
     private String title;
     private String bookTitle;
     private int year;
+    private String key;
 
-    public Inproceedings(String name, String author, String title, String booktitle, int year) {
-        this.nameOfReference = name;
+    public Inproceedings(String author, String title, String booktitle, int year, String key) {
         this.author = author;
         this.title = title;
         this.bookTitle = booktitle;
         this.year = year;
+        this.key = key;
     }
 
     public void setAuthor(String newAuthor) {
@@ -49,10 +49,6 @@ public class Inproceedings implements Reference {
         return bookTitle;
     }
 
-    public void setName(String name) {
-        nameOfReference = name;
-    }
-
     public void setYear(int newYear) {
         year = newYear;
     }
@@ -62,13 +58,8 @@ public class Inproceedings implements Reference {
     }
 
     @Override
-    public String getName() {
-        return nameOfReference;
-    }
-
-    @Override
     public String getBibtexName() {
-        return "@inproceedings{" + nameOfReference + ",\n"
+        return "@inproceedings{" + key + ",\n"
                 + "author = {" + author + "},\n"
                 + "title = {" + title + "},\n"
                 + "booktitle = {" + bookTitle + "},\n"
@@ -78,8 +69,13 @@ public class Inproceedings implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Inproceedings: (reference: " + nameOfReference + ", author: " + author + ", title:"
+        return "Inproceedings: (reference: " + key + ", author: " + author + ", title:"
                 + title + ", book title: " + bookTitle + ", year: " + year + ")";
+    }
+
+    @Override
+    public String getKey() {
+        return this.key;
     }
 
 }

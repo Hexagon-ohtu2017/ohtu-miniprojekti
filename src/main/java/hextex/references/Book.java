@@ -6,18 +6,18 @@ package hextex.references;
  */
 public class Book implements Reference {
 
-    public String nameOfReference;
     public String singleAuthor;
     public String title;
     public int year;
     public String publisher;
+    private String key;
 
-    public Book(String nameOfReference, String author, String title, int year, String publisher) {
-        this.nameOfReference = nameOfReference;
+    public Book(String author, String title, int year, String publisher, String key) {
         this.singleAuthor = author;
         this.title = title;
         this.year = year;
         this.publisher = publisher;
+        this.key = key;
     }
 
     /*
@@ -30,10 +30,6 @@ public class Book implements Reference {
         this.publisher = publisher;
     }
      */
-    public void setNameOfReference(String name) {
-        this.nameOfReference = name;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -44,10 +40,6 @@ public class Book implements Reference {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
-    }
-
-    public String getName() {
-        return nameOfReference;
     }
 
     public String getTitle() {
@@ -73,7 +65,7 @@ public class Book implements Reference {
         authorsNames.delete(authorsNames.length() - 5, authorsNames.length());
          */
 
-        return "@book{" + nameOfReference + ",\n"
+        return "@book{" + key + ",\n"
                 + "author = {" + singleAuthor + "},\n"
                 + "title = {" + title + "},\n"
                 + "year = {" + year + "},\n"
@@ -83,7 +75,12 @@ public class Book implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Book: (reference: " + nameOfReference + ", author: " + singleAuthor + ", title:"
+        return "Book: (reference: " + key + ", author: " + singleAuthor + ", title:"
                 + title + ", year: " + year + ", publisher: " + publisher + ")";
+    }
+
+    @Override
+    public String getKey() {
+        return this.key;
     }
 }

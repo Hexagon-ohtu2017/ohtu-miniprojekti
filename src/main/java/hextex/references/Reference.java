@@ -11,8 +11,8 @@ package hextex.references;
  */
 public interface Reference {
     
-    public String getName();
     public String getBibtexName();
     public String getEasyName();
+    public String getKey();
 
 }

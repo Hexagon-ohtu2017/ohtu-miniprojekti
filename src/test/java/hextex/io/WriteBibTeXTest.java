@@ -28,7 +28,8 @@ public class WriteBibTeXTest {
       String title = "Testing the Tester";
       int year = 2017;
       String publisher = "Princeton University Press";
-      Book b = new Book(refName, author, title, year, publisher);
+      String key = "Tes2017";
+      Book b = new Book(author, title, year, publisher, key);
       this.lib = new ArrayList();
       lib.add(b);
     }
@@ -66,7 +67,7 @@ public class WriteBibTeXTest {
         }
         br.close();
 
-        String comparison = "@book{" + "TT17" + ",\n"
+        String comparison = "@book{" + "Tes2017" + ",\n"
                 + "author = {" + "Tea the Tester" + "},\n"
                 + "title = {" + "Testing the Tester" + "},\n"
                 + "year = {" + 2017 + "},\n"

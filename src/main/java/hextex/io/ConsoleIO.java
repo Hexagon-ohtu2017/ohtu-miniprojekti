@@ -2,11 +2,11 @@ package hextex.io;
 
 import java.util.Scanner;
 
-public class ConsoleIO implements IO{
+public class ConsoleIO implements IO {
 
     private Scanner scanner;
 
-    public ConsoleIO()  {
+    public ConsoleIO() {
         this.scanner = new Scanner(System.in);
     }
 
@@ -36,6 +36,17 @@ public class ConsoleIO implements IO{
                 return input;
             }
             System.out.println("Value cannot be empty!");
+        }
+    }
+
+    public String readAuthors(String prompt) {
+        while (true) {
+            System.out.println(prompt);
+            String input = scanner.nextLine();
+            if (!input.isEmpty() && input.contains(" ")) {
+                return input;
+            }
+            System.out.println("Please follow the format");
         }
     }
 }

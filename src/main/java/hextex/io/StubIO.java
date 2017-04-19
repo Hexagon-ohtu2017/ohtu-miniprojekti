@@ -39,4 +39,9 @@ public class StubIO implements IO {
         }
         return "";
     }
+
+    @Override
+    public String readAuthors(String prompt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

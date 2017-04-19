@@ -7,6 +7,7 @@ package hextex.inmemory;
 
 import hextex.references.Reference;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -37,5 +38,17 @@ public class InMemoryReferenceDao implements ReferenceDao {
     @Override
     public void add(Reference reference) {
         references.add(reference);
+    }
+
+    @Override
+    public void delete(String key) {
+        Iterator<Reference> iterator = references.iterator();
+        while(iterator.hasNext()) {
+            Reference r = iterator.next();
+            if (r.getKey().equals(key)) {
+                references.remove(r);
+            }
+            break;
+        }
     }
 }
