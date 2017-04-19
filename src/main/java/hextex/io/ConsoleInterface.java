@@ -120,6 +120,7 @@ public class ConsoleInterface {
     public Article createArticle(IO io) {
         String author = io.readAuthors("Article's author(s) (format: 'Lastname Firstname, Lastname Firstname...'):");
         String title = io.readLine("Article's title:");
+        
         String journal = io.readLine("Article's journal:");
         int volume = io.readInt("Article's volume:");
         String page = io.readLine("Article's pages:");
@@ -162,8 +163,8 @@ public class ConsoleInterface {
     public void printAllReferences() {
         List<Reference> references = this.dao.listAll();
         System.out.println("References: ");
-        references.forEach((ref) -> {
+        for (Reference ref : references) {
             System.out.println("\t" + ref.getEasyName() + "\n");
-        });
+        }
     }
 }
