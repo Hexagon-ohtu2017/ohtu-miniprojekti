@@ -34,6 +34,7 @@ dependencies {
     testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
     testCompile 'junit:junit:' + junitVersion
     testCompile group: 'junit', name: 'junit', version: '4.10'
+    compile group: 'com.google.code.gson', name: 'gson', version: '1.7.2'
 }
 
 test {
