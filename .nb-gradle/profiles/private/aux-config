@@ -24,11 +24,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/java/hextex/Stepdefs.java</file>
-        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/resources/hextex/create_book_reference.feature</file>
-        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleInterface.java</file>
-        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/StubIO.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/Main.java</file>
         <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleIO.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleInterface.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/resources/hextex/create_book_reference.feature</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/java/hextex/Stepdefs.java</file>
       </group>
     </open-files>
   </auxiliary>

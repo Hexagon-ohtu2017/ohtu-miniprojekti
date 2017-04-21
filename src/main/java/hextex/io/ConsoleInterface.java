@@ -1,6 +1,7 @@
 package hextex.io;
 
 import hextex.inmemory.InMemoryReferenceDao;
+import hextex.json.JsonFileManipulator;
 import hextex.references.Article;
 import hextex.references.Book;
 import hextex.references.Inproceedings;
@@ -100,6 +101,7 @@ public class ConsoleInterface {
             }
 
             if (command.equals("quit")) {
+                JsonFileManipulator.writeJSON(this.dao.getReferences());
                 System.out.println("Thank you, come again ;)");
                 break;
             }

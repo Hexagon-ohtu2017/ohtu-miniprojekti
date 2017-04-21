@@ -23,7 +23,6 @@ public class WriteBibTeXTest {
     private ArrayList<Reference> lib;
 
     public WriteBibTeXTest() {
-      String refName = "TT17";
       String author = "Tea the Tester";
       String title = "Testing the Tester";
       int year = 2017;
