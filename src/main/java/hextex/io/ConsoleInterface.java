@@ -17,12 +17,47 @@ public class ConsoleInterface {
     private InMemoryReferenceDao dao;
     private IO io;
     private KeyMaker keyMaker;
+    private MainMenu mainmenu;
 
     public ConsoleInterface(IO io) {
         this.io = io;
         this.dao = new InMemoryReferenceDao();
         this.keyMaker = new KeyMaker(dao);
+        this.mainmenu = new MainMenu(io);
     }
+
+    public void mainmenu() {
+      while (true) {
+        System.out.println("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
+        String command = io.readLine("Commands: [new] , [list] , [delete] , [help] , [quit]");
+        if (command.equals("new")) {
+          io.print("Create a new reference");
+          break;
+        }
+        if (command.equals("list")) {
+            io.print("Listing all references");
+            break;
+        }
+
+        if (command.equals("delete")) {
+          io.print("Reference key (format: 'DoeDoe2000'):");
+          break;
+        }
+
+        if (command.equals("help")) {
+          io.print("type new to create new reference");
+          io.print("type bibtex to create bibtex file for reference you created");
+          io.print("type back if you want to return to main menu");
+          break;
+        }
+
+        if (command.equals("quit")) {
+            io.print("Thank you, come again ;)");
+            break;
+        }
+      }
+    }
+
 
     public void run() throws IOException {
         while (true) {
@@ -122,7 +157,7 @@ public class ConsoleInterface {
     public Article createArticle(IO io) {
         String author = io.readAuthors("Article's author(s) (format: 'Lastname Firstname, Lastname Firstname...'):");
         String title = io.readLine("Article's title:");
-        
+
         String journal = io.readLine("Article's journal:");
         int volume = io.readInt("Article's volume:");
         String page = io.readLine("Article's pages:");
@@ -142,9 +177,9 @@ public class ConsoleInterface {
     }
 
     public Reference createNewReference(IO io) {
-        Reference reference;
+        Reference reference = null;
         while (true) {
-            String command = io.readLine("Select type : [book] [article] [inproceedings]");
+            String command = io.readLine("Select type : [book] [article] [inproceedings] or return : [back]");
             if (command.equals("book")) {
                 reference = createBook(io);
                 break;
@@ -156,6 +191,9 @@ public class ConsoleInterface {
             if (command.equals("inproceedings")) {
                 reference = createInproceeding(io);
                 break;
+            }
+            if (command.equals("back")) {
+              return null;
             }
         }
         System.out.println("Reference was succesfully created!");
