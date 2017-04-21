@@ -12,6 +12,24 @@
         <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleIO.java</file>
       </group>
     </open-files>
-    <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
+    <editor-bookmarks lastBookmarkId="1" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2">
+      <file>
+        <url>src/main/java/hextex/io/ConsoleInterface.java</url>
+        <bookmark id="1">
+          <name/>
+          <line>114</line>
+          <key/>
+        </bookmark>
+      </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+      <group>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/java/hextex/Stepdefs.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/test/resources/hextex/create_book_reference.feature</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleInterface.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/StubIO.java</file>
+        <file>file:/home/cocacoca/projOhtu/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleIO.java</file>
+      </group>
+    </open-files>
   </auxiliary>
 </gradle-project-properties>

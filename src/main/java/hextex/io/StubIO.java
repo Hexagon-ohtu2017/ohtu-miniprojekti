@@ -11,7 +11,7 @@ import java.util.List;
 public class StubIO implements IO {
 
     private List<String> lines;
-    private int i;
+    private int i=0;
     private ArrayList<String> prints;
 
     public StubIO(List<String> values) {
@@ -42,6 +42,13 @@ public class StubIO implements IO {
 
     @Override
     public String readAuthors(String prompt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    print(prompt);
+    if (i < lines.size()) {
+            i++;
+            System.out.println(lines.get(i));
+            return lines.get(i);
+        }
+        return "";
+    
     }
 }

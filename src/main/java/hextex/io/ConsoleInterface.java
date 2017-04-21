@@ -156,7 +156,7 @@ public class ConsoleInterface {
                 break;
             }
         }
-        System.out.println("Reference was succesfully created!");
+        io.print("Reference was succesfully created!");
         return reference;
     }
 
