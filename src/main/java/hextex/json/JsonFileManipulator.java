@@ -17,9 +17,12 @@ public class JsonFileManipulator {
     static Gson gson = new Gson();
 
     public static void writeJSON(List<Reference> references) throws IOException {
+        List<Reference> oldRefs = readJSON();
+        oldRefs.addAll(references);
         try (FileWriter fw = new FileWriter(FILENAME)) {
-            for (Reference reference : references) {
+            for (Reference reference : oldRefs) {
                 String s = gson.toJson(reference);
+                System.out.println(s);
                 fw.append(s);
                 fw.append("\n");
             }

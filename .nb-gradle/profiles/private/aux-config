@@ -5,11 +5,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/references/Book.java</file>
-        <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/io/WriteBibTeX.java</file>
-        <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/Main.java</file>
-        <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleInterface.java</file>
-        <file>file:/Users/omistaja/ohtu-miniprojekti/src/main/java/hextex/io/ConsoleIO.java</file>
+        <file>file:/Users/aleksisvuoksenmaa/Desktop/Opiskelu/Tietojenkäsittelytiede/Ohtu/hexagon/ohtu-miniprojekti/src/main/java/hextex/references/Book.java</file>
+        <file>file:/Users/aleksisvuoksenmaa/Desktop/Opiskelu/Tietojenkäsittelytiede/Ohtu/hexagon/ohtu-miniprojekti/src/main/java/hextex/json/JsonFileManipulator.java</file>
+        <file>file:/Users/aleksisvuoksenmaa/Desktop/Opiskelu/Tietojenkäsittelytiede/Ohtu/hexagon/ohtu-miniprojekti/src/main/java/hextex/json/Request.java</file>
       </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
