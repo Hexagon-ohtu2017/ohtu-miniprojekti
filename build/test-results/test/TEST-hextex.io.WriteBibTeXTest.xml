@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-21T11:52:39" hostname="dhcp-asv-82" time="0.003">
+<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-23T09:56:19" hostname="Omistaja-MacBook-Pro.local" time="0.003">
   <properties/>
   <testcase name="writeBibTeXCorrectly" classname="hextex.io.WriteBibTeXTest" time="0.003"/>
-=======
-<testsuite name="hextex.io.WriteBibTeXTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-20T10:23:56" hostname="Aleksis-MBP" time="0.002">
-  <properties/>
-  <testcase name="writeBibTeXCorrectly" classname="hextex.io.WriteBibTeXTest" time="0.002"/>
->>>>>>> 81e5504eff5789b8cbc10d38144e5867dd4d56d6
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
