@@ -3,3 +3,5 @@ build/
 gradle.properties
 /references/nbproject/private/
 .nb-properties/
+.nb-gradle/
+.DS_Store
