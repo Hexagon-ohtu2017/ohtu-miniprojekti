@@ -1,11 +1,14 @@
 package hextex.references;
 
+import hextex.json.Request;
+
 /**
  *
  * @author cocacoca
  */
 public class Book implements Reference {
 
+    final String type = "Book";
     public String singleAuthor;
     public String title;
     public int year;
@@ -18,6 +21,14 @@ public class Book implements Reference {
         this.year = year;
         this.publisher = publisher;
         this.key = key;
+    }
+
+    public Book(Request req) {
+        this.singleAuthor = req.getSingleAuthor();
+        this.title = req.getTitle();
+        this.year = req.getYear();
+        this.publisher = req.getPublisher();
+        this.key = req.getKey();
     }
 
     /*
@@ -54,6 +65,11 @@ public class Book implements Reference {
         return publisher;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public String getBibtexName() {
         /*
         For multiple authors in a list. Currently not in use.

@@ -1,6 +1,7 @@
 package hextex.io;
 
 import hextex.inmemory.InMemoryReferenceDao;
+import hextex.json.JsonFileManipulator;
 import hextex.references.Article;
 import hextex.references.Book;
 import hextex.references.Inproceedings;
@@ -23,18 +24,22 @@ public class ConsoleInterface {
         this.keyMaker = new KeyMaker(dao);
     }
 
+    public void mainmenu() {
+      MainMenu menu = new MainMenu(io);
+      menu.run();
+    }
     public void run() throws IOException {
         while (true) {
-            System.out.println("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
+            io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
             String command = io.readLine("Commands: [new] , [list] , [delete] , [help] , [quit]");
             if (command.equals("new")) {
-                System.out.println("Create a new reference!");
+                io.print("Create a new reference!");
                 Reference reference = createNewReference(io);
                 dao.add(reference);
                 while (true) {
                     command = io.readLine("Commands: [new] , [bibtex] , [list], [delete], [help], [back]");
                     if (command.equals("new")) {
-                        System.out.println("Create a new reference!");
+                        io.print("Create a new reference!");
                         Reference ref = createNewReference(io);
                         dao.add(ref);
                     }
@@ -48,9 +53,9 @@ public class ConsoleInterface {
                                 break;
                             }
                             if (command.equals("help")) {
-                                System.out.println("type new if you want to create new reference");
-                                System.out.println("type list if you want to list all your references");
-                                System.out.println("type back if you want to return to main menu");
+                                io.print("type new if you want to create new reference");
+                                io.print("type list if you want to list all your references");
+                                io.print("type back if you want to return to main menu");
                             }
                             if (command.equals("new")) {
                                 break;
@@ -66,7 +71,7 @@ public class ConsoleInterface {
                     if (command.equals("delete")) {
                         String keyToBeRemoved = io.readLine("Reference key (format: 'DoeDoe2000'):");
                         dao.delete(keyToBeRemoved);
-                        System.out.println("reference deleted");
+                        io.print("reference deleted");
                     }
 
                     if (command.equals("help")) {
@@ -100,7 +105,8 @@ public class ConsoleInterface {
             }
 
             if (command.equals("quit")) {
-                System.out.println("Thank you, come again ;)");
+                JsonFileManipulator.writeJSON(this.dao.getReferences());
+                io.print("Thank you, come again ;)");
                 break;
             }
         }
@@ -141,7 +147,7 @@ public class ConsoleInterface {
     public Reference createNewReference(IO io) {
         Reference reference;
         while (true) {
-            String command = io.readLine("Select type : [book] [article] [inproceedings]");
+            String command = io.readLine("Select type : [book] [article] [inproceedings] or return: [back]");
             if (command.equals("book")) {
                 reference = createBook(io);
                 break;
@@ -154,16 +160,19 @@ public class ConsoleInterface {
                 reference = createInproceeding(io);
                 break;
             }
+            if (command.equals("back")) {
+              return null;
+            }
         }
-        System.out.println("Reference was succesfully created!");
+        io.print("Reference was succesfully created!");
         return reference;
     }
 
     public void printAllReferences() {
         List<Reference> references = this.dao.listAll();
-        System.out.println("References: ");
+        io.print("References:");
         for (Reference ref : references) {
-            System.out.println("\t" + ref.getEasyName() + "\n");
+            io.print("\t" + ref.getEasyName() + "\n");
         }
     }
 }

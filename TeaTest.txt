@@ -201,6 +201,10 @@ year = {2017},
 publisher = {Princeton University Press},
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> df1bb72a39d63bbfd430e7a591da6c3ddfe397ae
 @book{Tes2017,
 author = {Tea the Tester},
 title = {Testing the Tester},
@@ -320,6 +324,95 @@ year = {2017},
 publisher = {Princeton University Press},
 }
 
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 81e5504eff5789b8cbc10d38144e5867dd4d56d6
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+@book{Tes2017,
+author = {Tea the Tester},
+title = {Testing the Tester},
+year = {2017},
+publisher = {Princeton University Press},
+}
+
+>>>>>>> df1bb72a39d63bbfd430e7a591da6c3ddfe397ae
 @book{Tes2017,
 author = {Tea the Tester},
 title = {Testing the Tester},
