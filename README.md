@@ -7,7 +7,9 @@
 ## Käyttöohjeet
 
 -Käynnistä ohjelma menemällä sovelluksen juureen, kirjoita java -jar HexTex.jar ja    paina ENTER
+
 -Kirjoita help ja paina ENTER saadaksesi ohjeita
+
 -Poistu ohjelmasta kirjoittamalla quit ja painamalla ENTER kun olet Main Menussa
 
 ## Product backlog
