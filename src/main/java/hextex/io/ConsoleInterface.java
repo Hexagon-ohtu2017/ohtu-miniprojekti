@@ -124,17 +124,10 @@ public class ConsoleInterface {
             }
 
             if (command.equals("quit")) {
-                //String c = io.readLine("Save first? [y/n]");
-//                while (true) {
-//                if (c.equals("y")) {
-//                    JsonFileManipulator.writeJSON(this.dao.getReferences());
-//                    break;
-//                }
-//                if (c.equals("n")) {
-//                    break;
-//                }
-//            }
-                JsonFileManipulator.writeJSON(this.dao.getReferences());
+                String c = io.readLine("Save first? (enter 'n' to NOT save)");
+                if (!c.equals("n")) {
+                    JsonFileManipulator.writeJSON(this.dao.getReferences());
+                }
                 io.print("Thank you, come again ;)");
                 break;
             }
