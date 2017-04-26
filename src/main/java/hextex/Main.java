@@ -2,16 +2,8 @@ package hextex;
 
 import hextex.io.ConsoleIO;
 import hextex.io.ConsoleInterface;
-//<<<<<<< HEAD what is this?
-import hextex.io.StubIO;
-//======= what is this?
-import hextex.json.JsonFileManipulator;
-import hextex.references.Book;
-//>>>>>>> 81e5504eff5789b8cbc10d38144e5867dd4d56d6 what is this?
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
