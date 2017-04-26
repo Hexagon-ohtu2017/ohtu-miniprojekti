@@ -26,10 +26,10 @@ Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2i
 #### Käyttäjä voi käyttää sovellusta mahdollisimman vaivattomasti
 
 ###### Hyväksymistestit
-1. Mahdollisimman vähän back-navigointia.
-2. Komentoja voi antaa shortcutien avulla.
-3. Bibtex tiedosto on oikein sisennetty.
-4. Viitteet listataan luettavammassa muodossa.
+1. Käyttäjä voi antaa komentoja shortcutien avulla.
+2. Käyttäjän luoma bibtex tiedosto sisentyy oikein.
+3. Käyttäjä voi tarkastella listattuja viitteitä yksinkertaistetussa muodossa.
+4. Sovelluksen menurakenne on yksinkertainen.
 
 #### Yhden viitteen tietojen tarkastelu
 
