@@ -10,7 +10,7 @@ package hextex.references;
  * @author omistaja
  */
 public class Article implements Reference {
-
+    private String type;
     private String author;
     private String title;
     private String journal;
@@ -21,6 +21,7 @@ public class Article implements Reference {
 
     public Article(String author, String title, String journal, int volume,
             String pages, int year, String key) {
+        this.type = "Article";
         this.author = author;
         this.journal = journal;
         this.volume = volume;

@@ -8,7 +8,7 @@ import hextex.json.Request;
  */
 public class Book implements Reference {
 
-    final String type = "Book";
+    private String type;
     public String singleAuthor;
     public String title;
     public int year;
@@ -16,6 +16,7 @@ public class Book implements Reference {
     private String key;
 
     public Book(String author, String title, int year, String publisher, String key) {
+        this.type = "Book";
         this.singleAuthor = author;
         this.title = title;
         this.year = year;
@@ -73,7 +74,7 @@ public class Book implements Reference {
     public String getBibtexName() {
         /*
         For multiple authors in a list. Currently not in use.
-        
+
         StringBuilder authorsNames = new StringBuilder();
         for (Author author : authors) {
             authorsNames.append(author.getBibtexName()).append(" and ");
