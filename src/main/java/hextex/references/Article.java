@@ -5,11 +5,14 @@
  */
 package hextex.references;
 
+import hextex.json.Request;
+
 /**
  *
  * @author omistaja
  */
 public class Article implements Reference {
+
     private String type;
     private String author;
     private String title;
@@ -23,11 +26,37 @@ public class Article implements Reference {
             String pages, int year, String key) {
         this.type = "Article";
         this.author = author;
+        this.title = title;
         this.journal = journal;
         this.volume = volume;
         this.pages = pages;
         this.year = year;
         this.key = key;
+    }
+
+    public Article(Request req) {
+        this(req.getSingleAuthor(), req.getTitle(), req.getJournal(), req.getVolume(),
+                req.getPages(), req.getYear(), req.getKey());
+    }
+    
+    public String getType() {
+        return type;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     public String getAuthor() {

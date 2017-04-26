@@ -5,6 +5,8 @@
  */
 package hextex.references;
 
+import hextex.json.Request;
+
 /**
  *
  * @author omistaja
@@ -24,6 +26,23 @@ public class Inproceedings implements Reference {
         this.bookTitle = booktitle;
         this.year = year;
         this.key = key;
+    }
+
+    public Inproceedings(Request req) {
+        this(req.getSingleAuthor(), req.getTitle(), req.getBookTitle(), req.getYear(),
+                req.getKey());
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+    
+    public String getType() {
+        return type;
     }
 
     public void setAuthor(String newAuthor) {
@@ -78,5 +97,4 @@ public class Inproceedings implements Reference {
     public String getKey() {
         return this.key;
     }
-
 }

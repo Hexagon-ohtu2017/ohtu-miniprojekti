@@ -25,11 +25,8 @@ public class Book implements Reference {
     }
 
     public Book(Request req) {
-        this.singleAuthor = req.getSingleAuthor();
-        this.title = req.getTitle();
-        this.year = req.getYear();
-        this.publisher = req.getPublisher();
-        this.key = req.getKey();
+        this(req.getSingleAuthor(), req.getTitle(), req.getYear(),
+                req.getPublisher(), req.getKey());
     }
 
     /*

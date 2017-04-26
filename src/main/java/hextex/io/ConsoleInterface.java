@@ -7,10 +7,13 @@ import hextex.references.Book;
 import hextex.references.Inproceedings;
 import hextex.references.Reference;
 import hextex.service.KeyMaker;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConsoleInterface {
 
@@ -21,6 +24,13 @@ public class ConsoleInterface {
     public ConsoleInterface(IO io) {
         this.io = io;
         this.dao = new InMemoryReferenceDao();
+        try {
+            for (Reference ref : JsonFileManipulator.readJSON()) {
+                dao.add(ref);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.keyMaker = new KeyMaker(dao);
     }
 
@@ -105,7 +115,7 @@ public class ConsoleInterface {
             }
 
             if (command.equals("quit")) {
-                JsonFileManipulator.writeJSON(this.dao.getReferences());
+//                JsonFileManipulator.writeJSON(this.dao.getReferences());
                 io.print("Thank you, come again ;)");
                 break;
             }
@@ -170,9 +180,14 @@ public class ConsoleInterface {
 
     public void printAllReferences() {
         List<Reference> references = this.dao.listAll();
+//        try {
+//            references.addAll(JsonFileManipulator.readJSON());
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         io.print("References:");
         for (Reference ref : references) {
-            io.print("\t" + ref.getEasyName() + "\n");
+            io.print("\t" + ref.getEasyName());
         }
     }
 }
