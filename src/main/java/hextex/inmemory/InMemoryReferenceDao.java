@@ -37,13 +37,15 @@ public class InMemoryReferenceDao implements ReferenceDao {
 
     @Override
     public void add(Reference reference) {
-        references.add(reference);
+        if (reference != null) {
+            references.add(reference);
+        }
     }
 
     @Override
     public void delete(String key) {
         Iterator<Reference> iterator = references.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Reference r = iterator.next();
             if (r.getKey().equals(key)) {
                 references.remove(r);
