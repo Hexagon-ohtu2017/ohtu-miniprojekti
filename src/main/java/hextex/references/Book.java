@@ -29,16 +29,18 @@ public class Book implements Reference {
                 req.getPublisher(), req.getKey());
     }
 
-    /*
-    Not in use for now.
-    public Book(String nameOfReference, List<Author> authors, String title, int year, String publisher) {
-        this.nameOfReference = nameOfReference;
-        this.authors = authors;
-        this.title = title;
-        this.year = year;
-        this.publisher = publisher;
+    public String getSingleAuthor() {
+        return singleAuthor;
     }
-     */
+
+    public void setSingleAuthor(String singleAuthor) {
+        this.singleAuthor = singleAuthor;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+    
     public void setTitle(String title) {
         this.title = title;
     }

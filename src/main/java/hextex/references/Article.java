@@ -79,10 +79,6 @@ public class Article implements Reference {
         volume = newVolume;
     }
 
-    public Integer getVolume() {
-        return volume;
-    }
-
     public void setPages(String newPages) {
         pages = newPages;
     }
@@ -95,10 +91,14 @@ public class Article implements Reference {
         year = newYear;
     }
 
-    public Integer getYear() {
-        return year;
+    public int getVolume() {
+        return volume;
     }
 
+    public int getYear() {
+        return year;
+    }
+    
     @Override
     public String getBibtexName() {
         return "@article{" + key + ",\n"
