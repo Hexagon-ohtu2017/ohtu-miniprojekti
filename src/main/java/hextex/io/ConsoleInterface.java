@@ -35,9 +35,10 @@ public class ConsoleInterface {
     }
 
     public void mainmenu() {
-      MainMenu menu = new MainMenu(io);
-      menu.run();
+        MainMenu menu = new MainMenu(io);
+        menu.run();
     }
+
     public void run() throws IOException {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
@@ -56,7 +57,15 @@ public class ConsoleInterface {
 
                     if (command.equals("bibtex")) {
                         String fileName = io.readLine("Please give a name of the BibTeX file you wish to be created");
-                        WriteBibTeX.writeFile(fileName, reference);
+
+                        if (dao.getReferences().isEmpty()) {
+                            io.print("There are no references!");
+                        }
+
+                        for (Reference r : dao.getReferences()) {
+                            WriteBibTeX.writeFile(fileName, r);
+                        }
+
                         while (true) {
                             command = io.readLine("Commands: [new] , [help] , [back]");
                             if (command.equals("back")) {
@@ -115,13 +124,21 @@ public class ConsoleInterface {
             }
 
             if (command.equals("quit")) {
+                String c = io.readLine("Save first? [y/n]");
+//                while (true) {
+//                if (c.equals("y")) {
+//                    JsonFileManipulator.writeJSON(this.dao.getReferences());
+//                    break;
+//                }
+//                if (c.equals("n")) {
+//                    break;
+//                }
+//            }
 //                JsonFileManipulator.writeJSON(this.dao.getReferences());
                 io.print("Thank you, come again ;)");
                 break;
             }
         }
-
-        //System.out.println(Integer.class.isInstance(5));
     }
 
     public Book createBook(IO io) {
@@ -171,7 +188,7 @@ public class ConsoleInterface {
                 break;
             }
             if (command.equals("back")) {
-              return null;
+                return null;
             }
         }
         io.print("Reference was succesfully created!");

@@ -18,34 +18,39 @@ public class JsonFileManipulator {
     static String FILENAME = "references.json";
     static Gson gson = new Gson();
 
-    public static void writeJSON(List<Reference> references) throws IOException {
-//        List<Reference> oldRefs = readJSON();
-//        oldRefs.addAll(references);
-        try (FileWriter fw = new FileWriter(FILENAME)) {
+    public static void writeJSON(List<Reference> references, String filename) throws IOException {
+
+        try (FileWriter fw = new FileWriter(filename)) {
             for (Reference reference : references) {
                 String s = gson.toJson(reference);
-                System.out.println(s);
+//                System.out.println(s);
                 fw.append(s);
                 fw.append("\n");
             }
         }
     }
 
-    public static List<Reference> readJSON() throws FileNotFoundException {
-        FileReader fr = new FileReader(FILENAME);
+    public static void writeJSON(List<Reference> references) throws IOException {
+        writeJSON(references, FILENAME);
+    }
+    
+    public static List<Reference> readJSON(String filename) throws FileNotFoundException {
+        FileReader fr = new FileReader(filename);
 
         Scanner sc = new Scanner(fr);
         ArrayList<Request> reqs = new ArrayList<>();
 
         while (sc.hasNextLine()) {
             String jsonString = sc.nextLine();
-            Request rq = gson.fromJson(jsonString, Request.class);
-            reqs.add(rq);
+            if (!jsonString.isEmpty()) {
+                Request rq = gson.fromJson(jsonString, Request.class);
+                reqs.add(rq);
+            }
         }
 
         // Move this somewhere else!
         ArrayList<Reference> refs = new ArrayList();
-        
+
         for (Request req : reqs) {
             if (req.getType().equals("Book")) {
                 Book b = new Book(req);
@@ -64,15 +69,7 @@ public class JsonFileManipulator {
         return refs;
     }
 
-    public class Wrapper {
-
-        public String singleAuthor;
-        public String title;
-        public int year;
-        public String publisher;
-        private String key;
-        private String lel;
-
+    public static List<Reference> readJSON() throws FileNotFoundException {
+        return readJSON(FILENAME);
     }
-
 }
