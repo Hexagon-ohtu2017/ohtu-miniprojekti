@@ -23,7 +23,6 @@ public class ConsoleInterface {
 
     public ConsoleInterface(IO io) {
         this.io = io;
-        this.manipulator = new JsonFileManipulator();
         this.dao = new InMemoryReferenceDao();
         try {
             for (Reference ref : JsonFileManipulator.readJSON()) {
