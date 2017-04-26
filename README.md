@@ -16,6 +16,33 @@
 
 https://docs.google.com/spreadsheets/d/19EOMSb2dqar0gfmUwl0az7KPGXTaGRU-vQGXSTE0a00/edit?usp=sharing
 
+## Sprint 4
+
+Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
+Burndown: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF5akWuR2iIMr42Eqj3WMos/edit?usp=sharing
+
+### User storyt ja hyväksymistestit
+
+#### Käyttäjä voi käyttää sovellusta mahdollisimman vaivattomasti
+
+###### Hyväksymistestit
+1. Käyttäjä voi antaa komentoja shortcutien avulla.
+2. Käyttäjän luoma bibtex tiedosto sisentyy oikein.
+3. Käyttäjä voi tarkastella listattuja viitteitä yksinkertaistetussa muodossa.
+4. Sovelluksen menurakenne on yksinkertainen.
+
+#### Yhden viitteen tietojen tarkastelu
+
+###### Hyväksymistestit
+1. Käyttäjä voi valita vain yhden viitteen tiedot tarkasteltavaksi.
+2. Viitteestä näytetään käyttäjälle kaikki viitteen tiedot.
+
+#### Haku sisällön mukaan
+
+###### Hyväksymistestit
+1. Käyttäjä voi asettaa filttereitä viitelistaan
+2. Listauksessa näytetään vain viitteitä, joiden tiedoissa esiintyy filtterin merkkijono
+
 ## Sprint 3
 
 Backlog: https://docs.google.com/spreadsheets/d/16LNaqy8GF3Fzx5SaphqTLuDvG-HgsLa5TB3ui-GIDiQ/edit?usp=sharing
