@@ -80,10 +80,10 @@ public class Book implements Reference {
          */
 
         return "@book{" + key + ",\n"
-                + "author = {" + singleAuthor + "},\n"
-                + "title = {" + title + "},\n"
-                + "year = {" + year + "},\n"
-                + "publisher = {" + publisher + "},\n"
+                + "    author = {" + singleAuthor + "},\n"
+                + "    title = {" + title + "},\n"
+                + "    year = {" + year + "},\n"
+                + "    publisher = {" + publisher + "},\n"
                 + "}\n";
     }
 

@@ -80,10 +80,10 @@ public class Inproceedings implements Reference {
     @Override
     public String getBibtexName() {
         return "@inproceedings{" + key + ",\n"
-                + "author = {" + author + "},\n"
-                + "title = {" + title + "},\n"
-                + "booktitle = {" + bookTitle + "},\n"
-                + "year = {" + year + "},\n"
+                + "    author = {" + author + "},\n"
+                + "    title = {" + title + "},\n"
+                + "    booktitle = {" + bookTitle + "},\n"
+                + "    year = {" + year + "},\n"
                 + "}\n";
     }
 

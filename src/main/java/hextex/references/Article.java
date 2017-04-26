@@ -102,12 +102,12 @@ public class Article implements Reference {
     @Override
     public String getBibtexName() {
         return "@article{" + key + ",\n"
-                + "author = {" + author + "},\n"
-                + "title = {" + title + "},\n"
-                + "journal = {" + journal + "},\n"
-                + "volume = {" + volume + "},\n"
-                + "pages = {" + pages + "},\n"
-                + "year = {" + year + "},\n"
+                + "    author = {" + author + "},\n"
+                + "    title = {" + title + "},\n"
+                + "    journal = {" + journal + "},\n"
+                + "    volume = {" + volume + "},\n"
+                + "    pages = {" + pages + "},\n"
+                + "    year = {" + year + "},\n"
                 + "}\n";
     }
 
