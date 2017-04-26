@@ -23,6 +23,7 @@ public class ConsoleInterface {
 
     public ConsoleInterface(IO io) {
         this.io = io;
+        this.manipulator = new JsonFileManipulator();
         this.dao = new InMemoryReferenceDao();
         try {
             for (Reference ref : JsonFileManipulator.readJSON()) {
@@ -134,7 +135,7 @@ public class ConsoleInterface {
 //                    break;
 //                }
 //            }
-//                JsonFileManipulator.writeJSON(this.dao.getReferences());
+                JsonFileManipulator.writeJSON(this.dao.getReferences());
                 io.print("Thank you, come again ;)");
                 break;
             }
@@ -192,6 +193,7 @@ public class ConsoleInterface {
             }
         }
         io.print("Reference was succesfully created!");
+
         return reference;
     }
 
