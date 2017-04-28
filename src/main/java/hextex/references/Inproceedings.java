@@ -29,7 +29,7 @@ public class Inproceedings implements Reference {
     }
 
     public Inproceedings(Request req) {
-        this(req.getSingleAuthor(), req.getTitle(), req.getBookTitle(), req.getYear(),
+        this(req.getAuthor(), req.getTitle(), req.getBookTitle(), req.getYear(),
                 req.getKey());
     }
 

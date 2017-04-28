@@ -14,5 +14,6 @@ public interface Reference {
     public String getBibtexName();
     public String getEasyName();
     public String getKey();
+    public String getAuthor();
 
 }

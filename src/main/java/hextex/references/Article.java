@@ -35,7 +35,7 @@ public class Article implements Reference {
     }
 
     public Article(Request req) {
-        this(req.getSingleAuthor(), req.getTitle(), req.getJournal(), req.getVolume(),
+        this(req.getAuthor(), req.getTitle(), req.getJournal(), req.getVolume(),
                 req.getPages(), req.getYear(), req.getKey());
     }
     

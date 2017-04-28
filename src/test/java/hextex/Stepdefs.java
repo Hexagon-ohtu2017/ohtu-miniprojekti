@@ -55,7 +55,6 @@ public class Stepdefs {
 
     }@And("^creation is activated$")
     public void creation_is_ativated() throws Throwable {
-      inputLines.add("back");
       inputLines.add("quit");
       io =new StubIO(inputLines);
       ConsoleInterface console=new ConsoleInterface(io);

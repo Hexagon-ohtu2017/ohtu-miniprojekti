@@ -1,2 +1,1 @@
-{"type":"Book","title":"kirja","year":1994,"publisher":"otava","key":"kir1994"}
-{"type":"Book","title":"okok","year":34234,"publisher":"ok","key":"ok34234"}
+{"type":"Book","author":"Laitinen Ilari, Vihavainen Arto","title":"Kirja ohjelmointiin","year":2000,"publisher":"Otava","key":"LaiVih2000"}
