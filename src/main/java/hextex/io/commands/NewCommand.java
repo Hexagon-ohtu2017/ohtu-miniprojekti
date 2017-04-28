@@ -1,4 +1,3 @@
-
 package hextex.io.commands;
 
 import hextex.inmemory.InMemoryReferenceDao;
@@ -30,17 +29,15 @@ public class NewCommand implements Command {
 
     @Override
     public void run() {
-        while (true) {
-            io.print("Create a new reference!");
-            String command = io.readLine("Select type : [book] [article] [inproceedings] or return: [back]");
+        io.print("Create a new reference!");
+        String command = io.readLine("Select type : [book] [article] [inproceedings] or return: [back]");
 
-            if (command.equals("back")) {
-                return;
-            }
+        if (command.equals("back")) {
+            return;
+        }
 
-            if (commands.containsKey(command)) {
-                commands.get(command).run();
-            }
+        if (commands.containsKey(command)) {
+            commands.get(command).run();
         }
     }
 

@@ -8,7 +8,7 @@ public class Request {
     private String type;
 
     @SerializedName("author")
-    public String singleAuthor;
+    public String author;
 
     @SerializedName("title")
     public String title;
@@ -34,9 +34,9 @@ public class Request {
     @SerializedName("key")
     public String key;
 
-    public Request(String type, String singleAuthor, String title, int year, String publisher, String journal, int volume, String pages, String bookTitle, String key) {
+    public Request(String type, String author, String title, int year, String publisher, String journal, int volume, String pages, String bookTitle, String key) {
         this.type = type;
-        this.singleAuthor = singleAuthor;
+        this.author = author;
         this.title = title;
         this.year = year;
         this.publisher = publisher;
@@ -83,8 +83,8 @@ public class Request {
         return type;
     }
 
-    public String getSingleAuthor() {
-        return singleAuthor;
+    public String getAuthor() {
+        return author;
     }
 
     public String getTitle() {
@@ -107,8 +107,8 @@ public class Request {
         this.type = type;
     }
 
-    public void setSingleAuthor(String singleAuthor) {
-        this.singleAuthor = singleAuthor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public void setTitle(String title) {

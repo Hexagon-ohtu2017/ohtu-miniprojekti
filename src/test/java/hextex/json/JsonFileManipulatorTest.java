@@ -40,7 +40,7 @@ public class JsonFileManipulatorTest {
 
     @Before
     public void setUp() {
-        String author = "Tea the Tester";
+        String author = "Tea Tester";
         String title = "Testing the Tester";
         int year = 2017;
         String publisher = "Princeton University Press";
@@ -55,6 +55,7 @@ public class JsonFileManipulatorTest {
     @Test
     public void testWriteJSON() throws Exception {
         JsonFileManipulator.writeJSON(lib, testFile);
+        assertEquals(lib.get(0).getAuthor(), "Tea Tester");
     }
 
     /**
@@ -66,5 +67,4 @@ public class JsonFileManipulatorTest {
         assertEquals("Tes2017", refs.get(0).getKey());
         assertEquals(1, refs.size());
     }
-
 }

@@ -22,7 +22,7 @@ public class CreateBookCommand implements Command {
     public void run() {
         Book book = createBook();
         dao.add(book);
-        io.print("Book was succesfully created!");
+        io.print("Reference was succesfully created!");
     }
 
     private Book createBook() {

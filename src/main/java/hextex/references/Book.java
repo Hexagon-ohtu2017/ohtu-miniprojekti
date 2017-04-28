@@ -9,7 +9,7 @@ import hextex.json.Request;
 public class Book implements Reference {
 
     private String type;
-    public String singleAuthor;
+    public String author;
     public String title;
     public int year;
     public String publisher;
@@ -17,7 +17,7 @@ public class Book implements Reference {
 
     public Book(String author, String title, int year, String publisher, String key) {
         this.type = "Book";
-        this.singleAuthor = author;
+        this.author = author;
         this.title = title;
         this.year = year;
         this.publisher = publisher;
@@ -25,16 +25,16 @@ public class Book implements Reference {
     }
 
     public Book(Request req) {
-        this(req.getSingleAuthor(), req.getTitle(), req.getYear(),
+        this(req.getAuthor(), req.getTitle(), req.getYear(),
                 req.getPublisher(), req.getKey());
     }
 
-    public String getSingleAuthor() {
-        return singleAuthor;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setSingleAuthor(String singleAuthor) {
-        this.singleAuthor = singleAuthor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public void setKey(String key) {
@@ -82,7 +82,7 @@ public class Book implements Reference {
          */
 
         return "@book{" + key + ",\n"
-                + "    author = {" + singleAuthor + "},\n"
+                + "    author = {" + author + "},\n"
                 + "    title = {" + title + "},\n"
                 + "    year = {" + year + "},\n"
                 + "    publisher = {" + publisher + "},\n"
@@ -91,7 +91,7 @@ public class Book implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Book: (reference: " + key + ", author: " + singleAuthor + ", title:"
+        return "Book: (reference: " + key + ", author: " + author + ", title:"
                 + title + ", year: " + year + ", publisher: " + publisher + ")";
     }
 
