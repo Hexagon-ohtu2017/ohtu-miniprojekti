@@ -8,16 +8,10 @@ import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
 import hextex.io.commands.NewCommand;
 import hextex.json.JsonFileManipulator;
-import hextex.references.Article;
-import hextex.references.Book;
-import hextex.references.Inproceedings;
 import hextex.references.Reference;
 import hextex.service.KeyMaker;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +20,7 @@ public class ConsoleInterface {
 
     private InMemoryReferenceDao dao;
     private IO io;
-    private KeyMaker keyMaker;
+    private final KeyMaker keyMaker;
     private HashMap<String, Command> commands = new HashMap<>();
 
     public ConsoleInterface(IO io) {
