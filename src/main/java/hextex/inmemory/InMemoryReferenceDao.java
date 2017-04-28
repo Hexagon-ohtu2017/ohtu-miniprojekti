@@ -49,8 +49,8 @@ public class InMemoryReferenceDao implements ReferenceDao {
             Reference r = iterator.next();
             if (r.getKey().equals(key)) {
                 references.remove(r);
+                break;
             }
-            break;
         }
     }
 }
