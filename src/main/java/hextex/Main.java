@@ -2,6 +2,7 @@ package hextex;
 
 import hextex.io.ConsoleIO;
 import hextex.io.ConsoleInterface;
+import hextex.references.Book;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -16,15 +17,14 @@ public class Main {
         //StubIO stub = new StubIO(null);
         ConsoleInterface ci = new ConsoleInterface(new ConsoleIO());
         ci.run();
-
-
-
+//
 //        String author = "Teeeea the Tester";
 //        String title = "Testing the Tester";
 //        int year = 2017;
 //        String publisher = "Princeton University Press";
 //        String key = "Tes2017";
 //        Book b = new Book(author, title, year, publisher, key);
+//        System.out.println(b.matchesFilter("te"));
 //        List lib = new ArrayList();
 //        lib.add(b);
 //        lib.add(b);

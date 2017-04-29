@@ -6,6 +6,8 @@
 package hextex.references;
 
 import hextex.json.Request;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -38,7 +40,7 @@ public class Article implements Reference {
         this(req.getAuthor(), req.getTitle(), req.getJournal(), req.getVolume(),
                 req.getPages(), req.getYear(), req.getKey());
     }
-    
+
     public String getType() {
         return type;
     }
@@ -98,7 +100,7 @@ public class Article implements Reference {
     public int getYear() {
         return year;
     }
-    
+
     @Override
     public String getBibtexName() {
         return "@article{" + key + ",\n"
@@ -121,5 +123,31 @@ public class Article implements Reference {
     @Override
     public String getKey() {
         return this.key;
+    }
+
+    @Override
+    public boolean matchesFilter(String filterString) {
+        filterString = filterString.replaceAll("\\s+","").toLowerCase();
+        ArrayList<String> fields = this.addAllFields();
+        for (String field : fields) {
+            if(field.toLowerCase().contains(filterString)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    @Override
+    public ArrayList<String> addAllFields() {
+        ArrayList<String> fields = new ArrayList();
+        fields.add(this.author);
+        fields.add(this.journal);
+        fields.add(this.key);
+        fields.add(this.pages);
+        fields.add(this.title);
+        fields.add(Integer.toString(this.year));
+        fields.add(Integer.toString(this.volume));
+        return fields;
     }
 }

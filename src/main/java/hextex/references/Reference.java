@@ -5,15 +5,19 @@
  */
 package hextex.references;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author omistaja
  */
 public interface Reference {
-    
+
     public String getBibtexName();
     public String getEasyName();
     public String getKey();
     public String getAuthor();
+    public boolean matchesFilter(String filterString);
+    public ArrayList<String> addAllFields();
 
 }

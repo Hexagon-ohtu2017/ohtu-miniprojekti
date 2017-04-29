@@ -4,6 +4,7 @@ import hextex.inmemory.InMemoryReferenceDao;
 import hextex.io.commands.BibtexCommand;
 import hextex.io.commands.Command;
 import hextex.io.commands.DeleteCommand;
+import hextex.io.commands.FilterCommand;
 import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
 import hextex.io.commands.NewCommand;
@@ -40,6 +41,7 @@ public class ConsoleInterface {
         commands.put("delete", new DeleteCommand(io, dao));
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand());
+        commands.put("filter", new FilterCommand(io, dao));
     }
 
     public void mainmenu() {
@@ -50,7 +52,7 @@ public class ConsoleInterface {
     public void run() throws IOException {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [delete] , [help] , [quit]");
+            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [filter], [delete] , [help] , [quit]");
             
 
             if (command.equals("quit")) {

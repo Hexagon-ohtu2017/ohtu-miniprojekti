@@ -6,6 +6,8 @@
 package hextex.references;
 
 import hextex.json.Request;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -40,7 +42,7 @@ public class Inproceedings implements Reference {
     public void setKey(String key) {
         this.key = key;
     }
-    
+
     public String getType() {
         return type;
     }
@@ -96,5 +98,29 @@ public class Inproceedings implements Reference {
     @Override
     public String getKey() {
         return this.key;
+    }
+
+    @Override
+    public boolean matchesFilter(String filterString) {
+        filterString = filterString.replaceAll("\\s+","").toLowerCase();
+        ArrayList<String> fields = this.addAllFields();
+        for (String field : fields) {
+            if(field.toLowerCase().contains(filterString)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    @Override
+    public ArrayList<String> addAllFields() {
+        ArrayList<String> fields = new ArrayList();
+        fields.add(this.author);
+        fields.add(this.bookTitle);
+        fields.add(this.key);
+        fields.add(this.title);
+        fields.add(Integer.toString(this.year));;
+        return fields;
     }
 }
