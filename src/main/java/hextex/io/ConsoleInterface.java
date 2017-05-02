@@ -13,6 +13,7 @@ import hextex.references.Reference;
 import hextex.service.KeyMaker;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ public class ConsoleInterface {
 
     private InMemoryReferenceDao dao;
     private IO io;
+    private Shortcut shortcut;
     private final KeyMaker keyMaker;
     private HashMap<String, Command> commands = new HashMap<>();
 
@@ -42,6 +44,16 @@ public class ConsoleInterface {
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand());
         commands.put("filter", new FilterCommand(io, dao));
+        ArrayList<String> mainmenu = new ArrayList();
+        mainmenu.add("new");
+        mainmenu.add("bibtex");
+        mainmenu.add("list");
+        mainmenu.add("filter");
+        mainmenu.add("delete");     
+        mainmenu.add("help");
+        mainmenu.add("quit");
+        
+        this.shortcut = new Shortcut(mainmenu);
     }
 
     public void mainmenu() {
@@ -53,7 +65,7 @@ public class ConsoleInterface {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
             String command = io.readLine("Commands: [new] , [bibtex] , [list] , [filter], [delete] , [help] , [quit]");
-            
+            command = shortcut.retunCommand(command);
 
             if (command.equals("quit")) {
                 askForSaving();

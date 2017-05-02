@@ -1,0 +1,14 @@
+@book{LaiVih2000,
+    author = {Laitinen Ilari, Vihavainen Arto},
+    title = {Kirja ohjelmointiin},
+    year = {2000},
+    publisher = {Otava},
+}
+
+@book{kir1994a,
+    author = {kirja},
+    title = {kirja},
+    year = {1994},
+    publisher = {otava},
+}
+
