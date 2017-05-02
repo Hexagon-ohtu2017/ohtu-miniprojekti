@@ -4,6 +4,10 @@
 
 # Dokumentaatio
 
+## Raportti
+
+https://docs.google.com/document/d/1BhRWrxqTby307fkjDQgJ44aLilc7xrtdKwYMS11wM14/edit?usp=sharing
+
 ## Käyttöohjeet
 
 -Käynnistä ohjelma menemällä sovelluksen juureen, kirjoita java -jar HexTex.jar ja    paina ENTER
