@@ -34,15 +34,18 @@ public class DeleteFilterCommand implements Command {
 
     @Override
     public void run() {
-        io.print("Currently, you have the following active filters: " + this.printFilters());
+        io.print("Currently, you have the following active filters: " + this.printFilters() +"\n");
         String remove = io.readLine("Please enter the filter you want to remove: ");
         this.filters.remove(remove);
         io.print("References matching the filter:");
         //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
+        for (String filter : filters) {
+            queryBuilder.matchesField(filter);
+        }
         Matcher m = queryBuilder.build();
-        List<Reference> matches = this.matches(m);
+        ArrayList<Reference> matches = this.matches(m);
         for (Reference r : matches) {
-            io.print("\t" + r.getEasyName());
+            io.print(r.getEasyName());
         }
     }
     
@@ -60,6 +63,7 @@ public class DeleteFilterCommand implements Command {
     
     private String printFilters() {
         StringBuilder sb = new StringBuilder();
+        sb.append("\n");
         for (String filter : filters) {
             sb.append("\t" + filter);
             sb.append("\n");
