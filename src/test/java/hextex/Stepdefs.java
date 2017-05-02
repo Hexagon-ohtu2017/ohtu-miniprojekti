@@ -74,10 +74,34 @@ public class Stepdefs {
 public void app_is_running() throws Throwable {
 }
 
+
+
 @When("^quit is selected$")
 public void quit_is_selected() throws Throwable {
    inputLines.add("quit");
 }
+
+@When("^getMattiLuukkainen is selected$")
+public void getmattiluukkainen_is_selected() throws Throwable {
+  inputLines.add("getMattiLuukkainen");
+}
+
+@When("^qu is selected$")
+public void qu_is_selected() throws Throwable {
+  inputLines.add("qu");
+}
+
+
+@When("^enter is pressed$")
+public void enter_is_pressed() throws Throwable {
+    inputLines.add("");
+}
+
+@When("^n is selected$")
+public void n_is_selected() throws Throwable {
+    inputLines.add("n");
+}
+
 
 @Then("^system will respond with \"([^\"]*)\"$")
 public void system_will_respond_with(String arg1) throws Throwable {

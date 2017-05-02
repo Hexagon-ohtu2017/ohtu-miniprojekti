@@ -37,22 +37,22 @@ public class ConsoleInterface {
             Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.keyMaker = new KeyMaker(dao);
-        
+
         commands.put("new", new NewCommand(io, dao, keyMaker));
         commands.put("list", new ListCommand(dao, io));
         commands.put("delete", new DeleteCommand(io, dao));
         commands.put("bibtex", new BibtexCommand(io, dao));
-        commands.put("help", new HelpCommand());
+        commands.put("help", new HelpCommand(io));
         commands.put("filter", new FilterCommand(io, dao));
         ArrayList<String> mainmenu = new ArrayList();
         mainmenu.add("new");
         mainmenu.add("bibtex");
         mainmenu.add("list");
         mainmenu.add("filter");
-        mainmenu.add("delete");     
+        mainmenu.add("delete");
         mainmenu.add("help");
         mainmenu.add("quit");
-        
+
         this.shortcut = new Shortcut(mainmenu);
     }
 
@@ -71,11 +71,11 @@ public class ConsoleInterface {
                 askForSaving();
                 break;
             }
-            
+
             if (commands.containsKey(command)) {
                 commands.get(command).run();
             } else {
-                System.out.println("Command not found.");
+                io.print("Command not found.");
             }
         }
     }

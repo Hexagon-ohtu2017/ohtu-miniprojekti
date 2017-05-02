@@ -37,7 +37,7 @@ public class StubIO implements IO {
         if (i < lines.size()) {
             return lines.get(i++);
         }
-        return "";
+        return "Value cannot be empty!";
     }
 
     @Override
@@ -49,6 +49,6 @@ public class StubIO implements IO {
             return lines.get(i);
         }
         return "";
-    
+
     }
 }

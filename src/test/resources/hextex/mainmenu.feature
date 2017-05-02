@@ -8,10 +8,25 @@ Feature: As a user I can browse through main menu
     And quit is selected
     Then system will respond with "Create a new reference!"
 
+    Scenario: n is selected from main menu
+    Given app is running
+    When n is selected
+    And back is selected
+    And quit is selected
+    Then system will respond with "Create a new reference!"
+
+
     Scenario: quit is selected from main menu
     Given app is running
     When quit is selected
     Then system will respond with "Thank you, come again ;)"
+
+    Scenario: unknown command is selected from mainmenu
+    Given app is running
+    When getMattiLuukkainen is selected
+    And qu is selected
+    Then system will respond with "Command not found."
+
 
     Scenario: list is selected from main menu
     Given app is running
