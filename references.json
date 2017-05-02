@@ -1,2 +1,10 @@
 {"type":"Book","author":"Laitinen Ilari, Vihavainen Arto","title":"Kirja ohjelmointiin","year":2000,"publisher":"Otava","key":"LaiVih2000"}
 {"type":"Book","author":"kirja","title":"kirja","year":1994,"publisher":"otava","key":"kir1994a"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
+{"type":"Inproceedings","author":"Joku Arttu","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"Jok2017"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
+{"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017a"}
