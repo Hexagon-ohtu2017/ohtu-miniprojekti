@@ -67,11 +67,16 @@ public class WriteBibTeXTest {
         br.close();
 
         String comparison = "@book{" + "Tes2017" + ",\n"
-                + "author = {" + "Tea the Tester" + "},\n"
-                + "title = {" + "Testing the Tester" + "},\n"
-                + "year = {" + 2017 + "},\n"
-                + "publisher = {" + "Princeton University Press" + "},\n"
+                + "    author = {" + "Tea the Tester" + "},\n"
+                + "    title = {" + "Testing the Tester" + "},\n"
+                + "    year = {" + 2017 + "},\n"
+                + "    publisher = {" + "Princeton University Press" + "},\n"
                 + "}\n";
+
+        System.out.println("builderi:");
+        System.out.println(sb.toString());
+        System.out.println("comparison:");
+        System.out.println(comparison);
 
         assertTrue(sb.toString().contains(comparison));
 
