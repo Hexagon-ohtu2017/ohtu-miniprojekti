@@ -16,6 +16,9 @@ public class Shortcut {
       String command  = "eiole";
       for (String name : commands) {
           if (print.length() <= name.length()) {
+             if (print.equals(name)) {
+               return print;
+             }
             if (name.substring(0, print.length()).equals(print)) {
                 if (command.equals("eiole")) {
                     command = name;

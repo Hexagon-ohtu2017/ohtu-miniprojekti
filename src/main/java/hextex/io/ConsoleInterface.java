@@ -26,7 +26,7 @@ public class ConsoleInterface {
     private IO io;
     private QueryBuilder qb;
     private ArrayList<String> filters;
-    //private Shortcut shortcut;
+    private Shortcut shortcut;
     private final KeyMaker keyMaker;
     private HashMap<String, Command> commands = new HashMap<>();
 
@@ -59,8 +59,10 @@ public class ConsoleInterface {
         mainmenu.add("delete");
         mainmenu.add("help");
         mainmenu.add("quit");
+        mainmenu.add("add filter");
+        mainmenu.add("delete filter");
 
-        //this.shortcut = new Shortcut(mainmenu);
+        this.shortcut = new Shortcut(mainmenu);
     }
 
     public void mainmenu() {
@@ -72,7 +74,7 @@ public class ConsoleInterface {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
             String command = io.readLine("Commands: [new] , [bibtex] , [list] , [add filter], [delete filter], [delete] , [help] , [quit]");
-            //command = shortcut.retunCommand(command);
+            command = shortcut.retunCommand(command);
 
             if (command.equals("quit")) {
                 askForSaving();
