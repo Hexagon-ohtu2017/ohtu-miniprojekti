@@ -18,14 +18,14 @@ import java.util.stream.Collectors;
  *
  * @author aleksisvuoksenmaa
  */
-public class DeleteFilterCommand implements Command {
+public class RemoveFilterCommand implements Command {
 
     private InMemoryReferenceDao dao;
     private IO io;
     private QueryBuilder queryBuilder;
     private ArrayList<String> filters;
 
-    public DeleteFilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
+    public RemoveFilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
         this.io = io;
         this.dao = dao;
         this.queryBuilder = qb;

@@ -1,38 +1,32 @@
 package hextex.io;
 
-import hextex.io.commands.Command;
 import java.util.ArrayList;
-import java.util.HashMap;
-
+import java.util.List;
 
 public class Shortcut {
-  private ArrayList<String> commands;
 
-  public Shortcut(ArrayList<String> commands) {
-    this.commands = commands;
-  }
+    private ArrayList<String> commands;
 
-  public String retunCommand(String print) {
-      String command  = "eiole";
-      for (String name : commands) {
-          if (print.length() <= name.length()) {
-             if (print.equals(name)) {
-               return print;
-             }
-            if (name.substring(0, print.length()).equals(print)) {
-                if (command.equals("eiole")) {
-                    command = name;
+    public Shortcut(ArrayList<String> commands) {
+        this.commands = commands;
+    }
+
+    public List<String> returnCommands(String print) {
+        List<String> matchingCommands = new ArrayList<>();
+        for (String name : commands) {
+            if (print.length() <= name.length()) {
+                if (name.equals(print)) {
+                    List<String> exactMatch = new ArrayList<>();
+                    exactMatch.add(name);
+                    return exactMatch;
                 }
-                else {
-                    return "eiole";
+                if (name.substring(0, print.length()).equals(print)) {
+                    matchingCommands.add(name);
                 }
-
             }
-          }
+        }
 
-      }
-      return command;
-  }
-
+        return matchingCommands;
+    }
 
 }

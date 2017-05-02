@@ -3,14 +3,10 @@ package hextex.io.commands;
 import hextex.inmemory.InMemoryReferenceDao;
 import hextex.io.IO;
 import hextex.io.Shortcut;
-import hextex.io.WriteBibTeX;
-import hextex.references.Article;
-import hextex.references.Book;
-import hextex.references.Inproceedings;
-import hextex.references.Reference;
 import hextex.service.KeyMaker;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class NewCommand implements Command {
 
@@ -40,13 +36,23 @@ public class NewCommand implements Command {
     public void run() {
         io.print("Create a new reference!");
         String print = io.readLine("Select type : [book] [article] [inproceedings] or return: [back]");
-        String command = shortcut.retunCommand(print);
-        if (command.equals("back")) {
-            return;
-        }
+        List<String> matchingCommands = shortcut.returnCommands(print);
 
-        if (commands.containsKey(command)) {
-            commands.get(command).run();
+//        io.print(matchingCommands.toString());
+        if (matchingCommands.isEmpty()) {
+            io.print("Command not found.");
+        } else if (matchingCommands.size() > 1) {
+            StringBuilder sb = new StringBuilder();
+            for (String s : matchingCommands) {
+                sb.append(s).append(", ");
+            }
+            sb.delete(sb.length() - 2, sb.length());
+            io.print("Please type more, found the following matches: " + sb.toString());
+            run();
+        } else if (commands.containsKey(matchingCommands.get(0))) {
+            commands.get(matchingCommands.get(0)).run();
+        } else if (!matchingCommands.get(0).equals("back")) {
+            run();
         }
     }
 

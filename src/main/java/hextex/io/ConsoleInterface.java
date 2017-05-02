@@ -4,7 +4,7 @@ import hextex.inmemory.InMemoryReferenceDao;
 import hextex.io.commands.BibtexCommand;
 import hextex.io.commands.Command;
 import hextex.io.commands.DeleteCommand;
-import hextex.io.commands.DeleteFilterCommand;
+import hextex.io.commands.RemoveFilterCommand;
 import hextex.io.commands.FilterCommand;
 import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -50,17 +51,16 @@ public class ConsoleInterface {
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand(io));
         commands.put("add filter", new FilterCommand(io, dao, qb, filters));
-        commands.put("delete filter", new DeleteFilterCommand(io, dao, qb, filters));
+        commands.put("remove filter", new RemoveFilterCommand(io, dao, qb, filters));
         ArrayList<String> mainmenu = new ArrayList();
         mainmenu.add("new");
         mainmenu.add("bibtex");
         mainmenu.add("list");
-        mainmenu.add("filter");
         mainmenu.add("delete");
         mainmenu.add("help");
         mainmenu.add("quit");
         mainmenu.add("add filter");
-        mainmenu.add("delete filter");
+        mainmenu.add("remove filter");
 
         this.shortcut = new Shortcut(mainmenu);
     }
@@ -73,18 +73,24 @@ public class ConsoleInterface {
     public void run() throws IOException {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [add filter], [delete filter], [delete] , [help] , [quit]");
-            command = shortcut.retunCommand(command);
+            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [add filter], [remove filter], [delete] , [help] , [quit]");
+            List<String> matchingCommands = shortcut.returnCommands(command);
 
-            if (command.equals("quit")) {
-                askForSaving();
-                break;
-            }
-
-            if (commands.containsKey(command)) {
-                commands.get(command).run();
-            } else {
+            if (matchingCommands.isEmpty()) {
                 io.print("Command not found.");
+            } else if (matchingCommands.size() == 1) {
+                if (matchingCommands.get(0).equals("quit")) {
+                    askForSaving();
+                    break;
+                }
+                this.commands.get(matchingCommands.get(0)).run();
+            } else {
+                StringBuilder sb = new StringBuilder();
+                for (String s : matchingCommands) {
+                    sb.append(s).append(", ");
+                }
+                sb.delete(sb.length() - 2, sb.length());
+                io.print("Please type more, found the following matches: " + sb.toString());
             }
         }
     }
