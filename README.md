@@ -148,3 +148,4 @@ Burndown-käyrä: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF
 3. Jos käyttäjä jättää pakollisen kentän täyttämättä annetaan virhe ilmoitus
 
 4. Viite luodaan, jos käyttäjä täyttää book-kategorian kaikki syötteet ja ilman ääkkösiä
+
