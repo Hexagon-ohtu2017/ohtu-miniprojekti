@@ -11,8 +11,6 @@ import hextex.matcher.Matcher;
 import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  *
@@ -34,43 +32,48 @@ public class RemoveFilterCommand implements Command {
 
     @Override
     public void run() {
-        io.print("Currently, you have the following active filters: " + this.printFilters() +"\n");
-        String remove = io.readLine("Please enter the filter you want to remove: ");
-        this.filters.remove(remove);
-        io.print("References matching the filter:");
-        //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
-        for (String filter : filters) {
-            queryBuilder.matchesField(filter);
-        }
-        Matcher m = queryBuilder.build();
-        ArrayList<Reference> matches = this.matches(m);
-        for (Reference r : matches) {
-            io.print(r.getEasyName());
+        io.print("Currently, you have the following active filters: " + this.printFilters());
+        String remove = io.readLine("Please enter the filter you want to remove"
+                + " (\"ddd\" to remove all filters)");
+        if (remove.equals("ddd")) {
+            this.filters.clear();
+            io.print("All filters are removed.");
+        } else {
+            this.filters.remove(remove);
+            io.print("References matching the filter:");
+            //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
+            for (String filter : filters) {
+                queryBuilder.matchesField(filter);
+            }
+            Matcher m = queryBuilder.build();
+            ArrayList<Reference> matches = this.matches(m);
+            for (Reference r : matches) {
+                io.print(r.getEasyName());
+            }
         }
     }
-    
+
     private ArrayList matches(Matcher matcher) {
         ArrayList<Reference> matches = new ArrayList<Reference>();
-        
+
         for (Reference r : this.dao.listAll()) {
             if (matcher.matches(r)) {
                 matches.add(r);
-            }            
+            }
         }
-        
+
         return matches;
     }
-    
+
     private String printFilters() {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");
         for (String filter : filters) {
-            sb.append("\t" + filter);
+            sb.append("\t");
+            sb.append(filter);
             sb.append("\n");
         }
         return sb.toString();
     }
-
-    
 
 }
