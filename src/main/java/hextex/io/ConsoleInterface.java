@@ -4,11 +4,13 @@ import hextex.inmemory.InMemoryReferenceDao;
 import hextex.io.commands.BibtexCommand;
 import hextex.io.commands.Command;
 import hextex.io.commands.DeleteCommand;
+import hextex.io.commands.DeleteFilterCommand;
 import hextex.io.commands.FilterCommand;
 import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
 import hextex.io.commands.NewCommand;
 import hextex.json.JsonFileManipulator;
+import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import hextex.service.KeyMaker;
 import java.io.FileNotFoundException;
@@ -22,13 +24,17 @@ public class ConsoleInterface {
 
     private InMemoryReferenceDao dao;
     private IO io;
-    private Shortcut shortcut;
+    private QueryBuilder qb;
+    private ArrayList<String> filters;
+    //private Shortcut shortcut;
     private final KeyMaker keyMaker;
     private HashMap<String, Command> commands = new HashMap<>();
 
     public ConsoleInterface(IO io) {
         this.io = io;
         this.dao = new InMemoryReferenceDao();
+        this.qb = new QueryBuilder();
+        this.filters = new ArrayList();
         try {
             for (Reference ref : JsonFileManipulator.readJSON()) {
                 dao.add(ref);
@@ -43,7 +49,8 @@ public class ConsoleInterface {
         commands.put("delete", new DeleteCommand(io, dao));
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand(io));
-        commands.put("filter", new FilterCommand(io, dao));
+        commands.put("add filter", new FilterCommand(io, dao, qb, filters));
+        commands.put("delete filter", new DeleteFilterCommand(io, dao, qb, filters));
         ArrayList<String> mainmenu = new ArrayList();
         mainmenu.add("new");
         mainmenu.add("bibtex");
@@ -53,7 +60,7 @@ public class ConsoleInterface {
         mainmenu.add("help");
         mainmenu.add("quit");
 
-        this.shortcut = new Shortcut(mainmenu);
+        //this.shortcut = new Shortcut(mainmenu);
     }
 
     public void mainmenu() {
@@ -64,8 +71,8 @@ public class ConsoleInterface {
     public void run() throws IOException {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [filter], [delete] , [help] , [quit]");
-            command = shortcut.retunCommand(command);
+            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [add filter], [delete filter], [delete] , [help] , [quit]");
+            //command = shortcut.retunCommand(command);
 
             if (command.equals("quit")) {
                 askForSaving();

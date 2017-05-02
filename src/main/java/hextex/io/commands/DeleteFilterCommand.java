@@ -18,14 +18,14 @@ import java.util.stream.Collectors;
  *
  * @author aleksisvuoksenmaa
  */
-public class FilterCommand implements Command {
+public class DeleteFilterCommand implements Command {
 
     private InMemoryReferenceDao dao;
     private IO io;
     private QueryBuilder queryBuilder;
     private ArrayList<String> filters;
 
-    public FilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
+    public DeleteFilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
         this.io = io;
         this.dao = dao;
         this.queryBuilder = qb;
@@ -34,12 +34,9 @@ public class FilterCommand implements Command {
 
     @Override
     public void run() {
-        List<Reference> references = this.dao.listAll();
-        String filterString = io.readLine("Please enter a string you want to use to filter the references: ");
-        this.filters.add(filterString);
-        for (String s : filters) {
-            queryBuilder.matchesField(s);
-        }
+        io.print("Currently, you have the following active filters: " + this.printFilters());
+        String remove = io.readLine("Please enter the filter you want to remove: ");
+        this.filters.remove(remove);
         io.print("References matching the filter:");
         //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
         Matcher m = queryBuilder.build();
@@ -59,6 +56,15 @@ public class FilterCommand implements Command {
         }
         
         return matches;
+    }
+    
+    private String printFilters() {
+        StringBuilder sb = new StringBuilder();
+        for (String filter : filters) {
+            sb.append("\t" + filter);
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
     
