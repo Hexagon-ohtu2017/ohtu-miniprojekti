@@ -34,7 +34,7 @@ dependencies {
     testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
     testCompile 'junit:junit:' + junitVersion
     testCompile group: 'junit', name: 'junit', version: '4.10'
-    compile group: 'com.google.code.gson', name: 'gson', version: '1.7.2'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
 }
 
 test {
@@ -47,6 +47,10 @@ mainClassName = 'hextex.Main'
 jar {
     manifest {
         attributes 'Main-Class': 'hextex.Main'
+    }
+
+    from {
+        configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
     }
 }
 
