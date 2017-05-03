@@ -11,7 +11,7 @@ import java.util.List;
 public class StubIO implements IO {
 
     private List<String> lines;
-    private int i=0;
+    private int i = 0;
     private ArrayList<String> prints;
 
     public StubIO(List<String> values) {
@@ -42,13 +42,20 @@ public class StubIO implements IO {
 
     @Override
     public String readAuthors(String prompt) {
-    print(prompt);
-    if (i < lines.size()) {
+        print(prompt);
+        if (i < lines.size()) {
             i++;
             System.out.println(lines.get(i));
             return lines.get(i);
         }
         return "";
+
+    }
+
+    @Override
+    public String readLineAcceptEmpty(String prompt) {
+        print(prompt);
+        return lines.get(i++);
 
     }
 }

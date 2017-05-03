@@ -30,8 +30,10 @@ public class FilterCommand implements Command {
 
     @Override
     public void run() {
-        String filterString = io.readLine("Please enter a string you want to use to filter the references: ");
-
+        String filterString = io.readLineAcceptEmpty("Please enter a string you want to use to filter the references: ");
+        if (filterString.isEmpty()) {
+            return;
+        }
         dao.addFilter(filterString);
         List<Reference> matches = dao.listFiltered();
 

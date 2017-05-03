@@ -45,10 +45,18 @@ public class ConsoleIO implements IO {
             String input = scanner.nextLine();
             if (!input.isEmpty() && input.contains(" ")) {
                 return input;
-            }if(input.isEmpty()){
+            }
+            if (input.isEmpty()) {
                 System.out.println("Author cannot be empty!");
             }
             System.out.println("Please follow the format");
         }
+    }
+
+    @Override
+    public String readLineAcceptEmpty(String prompt) {
+        System.out.println(prompt);
+        String input = scanner.nextLine();
+        return input;
     }
 }

@@ -16,7 +16,10 @@ public class DeleteCommand implements Command {
 
     @Override
     public void run() {
-        String keyToBeRemoved = io.readLine("Reference key (format: 'DoeDoe2000'):");
+        String keyToBeRemoved = io.readLineAcceptEmpty("Reference key (format: 'DoeDoe2000'):");
+        if (keyToBeRemoved.isEmpty()) {
+            return;
+        }
         dao.delete(keyToBeRemoved);
         io.print("reference deleted");
     }

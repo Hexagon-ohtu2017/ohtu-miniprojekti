@@ -17,5 +17,7 @@ public interface IO {
 
     String readLine(String prompt);
     
+    String readLineAcceptEmpty(String prompt);
+    
     String readAuthors(String prompt);
 }

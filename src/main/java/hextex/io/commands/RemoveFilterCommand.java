@@ -34,8 +34,11 @@ public class RemoveFilterCommand implements Command {
     @Override
     public void run() {
         io.print("Currently, you have the following active filters: " + dao.getFilters());
-        String remove = io.readLine("Please enter the filter you want to remove"
+        String remove = io.readLineAcceptEmpty("Please enter the filter you want to remove"
                 + " (\"ddd\" to remove all filters)");
+        if (remove.isEmpty()) {
+            return;
+        }
         if (remove.equals("ddd")) {
             dao.clearFilters();
             io.print("All filters are removed.");

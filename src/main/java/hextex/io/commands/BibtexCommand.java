@@ -26,9 +26,13 @@ public class BibtexCommand implements Command {
             return;
         }
 
-        String fileName = io.readLine("Please give a name of the BibTeX file "
+        String fileName = io.readLineAcceptEmpty("Please give a name of the BibTeX file "
                 + "you wish to update");
 
+        if (fileName.isEmpty()) {
+            return;
+        }
+        
         for (Reference r : references) {
             try {
                 WriteBibTeX.writeFile(fileName + ".bib", r);
