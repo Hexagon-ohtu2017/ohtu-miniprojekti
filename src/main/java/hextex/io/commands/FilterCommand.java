@@ -22,45 +22,22 @@ public class FilterCommand implements Command {
 
     private InMemoryReferenceDao dao;
     private IO io;
-    private QueryBuilder queryBuilder;
-    private ArrayList<String> filters;
 
     public FilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
         this.io = io;
         this.dao = dao;
-        this.queryBuilder = qb;
-        this.filters = filters;
     }
 
     @Override
     public void run() {
-        List<Reference> references = this.dao.listAll();
         String filterString = io.readLine("Please enter a string you want to use to filter the references: ");
-        this.filters.add(filterString);
-        for (String s : filters) {
-            queryBuilder.matchesField(s);
-        }
+
+        dao.addFilter(filterString);
+        List<Reference> matches = dao.listFiltered();
+
         io.print("References matching the filter:");
-        //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
-        Matcher m = queryBuilder.build();
-        List<Reference> matches = this.matches(m);
         for (Reference r : matches) {
             io.print("\t" + r.getEasyName());
         }
     }
-    
-    private ArrayList matches(Matcher matcher) {
-        ArrayList<Reference> matches = new ArrayList<Reference>();
-        
-        for (Reference r : this.dao.listAll()) {
-            if (matcher.matches(r)) {
-                matches.add(r);
-            }            
-        }
-        
-        return matches;
-    }
-
-    
-
 }

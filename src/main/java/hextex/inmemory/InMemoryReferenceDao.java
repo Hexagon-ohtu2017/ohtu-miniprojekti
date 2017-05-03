@@ -5,6 +5,8 @@
  */
 package hextex.inmemory;
 
+import hextex.matcher.Matcher;
+import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,9 +19,15 @@ import java.util.List;
 public class InMemoryReferenceDao implements ReferenceDao {
 
     private List<Reference> references;
+    private List<String> filters;
+//    private List<Matcher> matchers;
+    private QueryBuilder queryBuilder;
 
     public InMemoryReferenceDao() {
-        references = new ArrayList<Reference>();
+        references = new ArrayList<>();
+        filters = new ArrayList<>();
+//        matchers = new ArrayList<>();
+        queryBuilder = new QueryBuilder();
     }
 
     @Override
@@ -53,4 +61,43 @@ public class InMemoryReferenceDao implements ReferenceDao {
             }
         }
     }
+
+    public void addFilter(String filterString) {
+        this.filters.add(filterString);
+    }
+
+    public List<Reference> listFiltered() {
+        for (String s : filters) {
+            queryBuilder.matchesField(s);
+        }
+        Matcher m = queryBuilder.build();
+        
+        List<Reference> matches = new ArrayList<>();
+        for (Reference r : references) {
+            if (m.matches(r)) {
+                matches.add(r);
+            }
+        }
+
+        return matches;
+    }
+
+    public List<String> getFilters() {
+        return filters;
+    }
+
+    public void clearFilters() {
+        filters.clear();
+    }
+
+    public void removeFilter(String filter) {
+        Iterator iter = filters.iterator();
+        while (iter.hasNext()) {
+            Object next = iter.next();
+            if (next.equals(filter)) {
+                iter.remove();
+            }
+        }
+    }
+    
 }

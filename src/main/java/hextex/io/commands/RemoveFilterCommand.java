@@ -11,6 +11,7 @@ import hextex.matcher.Matcher;
 import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -32,39 +33,23 @@ public class RemoveFilterCommand implements Command {
 
     @Override
     public void run() {
-        io.print("Currently, you have the following active filters: " + this.printFilters());
+        io.print("Currently, you have the following active filters: " + dao.getFilters());
         String remove = io.readLine("Please enter the filter you want to remove"
                 + " (\"ddd\" to remove all filters)");
         if (remove.equals("ddd")) {
-            this.filters.clear();
+            dao.clearFilters();
             io.print("All filters are removed.");
         } else {
-            this.filters.remove(remove);
+            dao.removeFilter(remove);
             io.print("References matching the filter:");
-            //List<Reference> matches = references.stream().filter(r -> r.matchesFilter(filterString)).collect(Collectors.toList());
-            for (String filter : filters) {
-                queryBuilder.matchesField(filter);
-            }
-            Matcher m = queryBuilder.build();
-            ArrayList<Reference> matches = this.matches(m);
+            List<Reference> matches = dao.listFiltered();
             for (Reference r : matches) {
                 io.print(r.getEasyName());
             }
         }
     }
 
-    private ArrayList matches(Matcher matcher) {
-        ArrayList<Reference> matches = new ArrayList<Reference>();
-
-        for (Reference r : this.dao.listAll()) {
-            if (matcher.matches(r)) {
-                matches.add(r);
-            }
-        }
-
-        return matches;
-    }
-
+    /*
     private String printFilters() {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");
@@ -75,5 +60,5 @@ public class RemoveFilterCommand implements Command {
         }
         return sb.toString();
     }
-
+     */
 }

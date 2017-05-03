@@ -18,7 +18,8 @@ public class ListCommand implements Command {
 
     @Override
     public void run() {
-        List<Reference> references = this.dao.listAll();
+        List<Reference> references = dao.listFiltered();
+//        List<Reference> references = this.dao.listAll();
 //        try {
 //            references.addAll(JsonFileManipulator.readJSON());
 //        } catch (FileNotFoundException ex) {

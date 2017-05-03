@@ -1,4 +1,3 @@
-
 package hextex.io.commands;
 
 import hextex.inmemory.InMemoryReferenceDao;
@@ -6,8 +5,7 @@ import hextex.io.IO;
 import hextex.io.WriteBibTeX;
 import hextex.references.Reference;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 
 public class BibtexCommand implements Command {
 
@@ -21,21 +19,24 @@ public class BibtexCommand implements Command {
 
     @Override
     public void run() {
+        List<Reference> references = dao.listFiltered();
 
-        if (dao.getReferences().isEmpty()) {
-            io.print("There are no references!");
+        if (references.isEmpty()) {
+            io.print("There are no references matching your filters!");
             return;
         }
 
-        String fileName = io.readLine("Please give a name of the BibTeX file you wish to be created");
+        String fileName = io.readLine("Please give a name of the BibTeX file "
+                + "you wish to update");
 
-        for (Reference r : dao.getReferences()) {
+        for (Reference r : references) {
             try {
-                WriteBibTeX.writeFile(fileName, r);
+                WriteBibTeX.writeFile(fileName + ".bib", r);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex.getMessage());
             }
         }
+        io.print("Bibtex file \"" + fileName + ".bib" + "\" has been updated");
 
     }
 
