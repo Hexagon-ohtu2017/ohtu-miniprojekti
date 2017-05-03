@@ -114,10 +114,16 @@ public class Article implements Reference {
     }
 
     @Override
-    public String getEasyName() {
+    public String getFullName() {
         return "Article " + key + ": (" + author + ", \"" + title + "\""
                 + ", journal: " + journal + ", volume: "
                 + volume + ", pages: " + pages + ", " + year + ")";
+    }
+    
+    @Override
+    public String getEasyName() {
+        return "[" + key + "]" + ": " + author + ", \"" + title + "\""
+                + ", " + year;
     }
 
     @Override

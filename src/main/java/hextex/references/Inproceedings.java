@@ -90,9 +90,15 @@ public class Inproceedings implements Reference {
     }
 
     @Override
-    public String getEasyName() {
+    public String getFullName() {
         return "Inproceedings " + key + ": (" + author + ", \"" + title + "\""
                 + ", \"" + bookTitle + "\", " + year + ")";
+    }
+    
+    @Override
+    public String getEasyName() {
+        return "[" + key + "]" + ": " + author + ", \"" + title + "\""
+                + ", " + year;
     }
 
     @Override

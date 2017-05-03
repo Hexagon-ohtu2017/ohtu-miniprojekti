@@ -24,7 +24,7 @@ public class FindCommand implements Command {
         List<Reference> references = dao.listFiltered();
         for (Reference ref : references) {
             if (ref.getKey().equals(key)) {
-              io.print("Reference:\n\t" + ref.getEasyName() + "\n");
+              io.print("Reference:\n\t" + ref.getFullName()+ "\n");
               return;
             }
         }

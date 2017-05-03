@@ -6,6 +6,7 @@ import hextex.io.commands.Command;
 import hextex.io.commands.DeleteCommand;
 import hextex.io.commands.RemoveFilterCommand;
 import hextex.io.commands.FilterCommand;
+import hextex.io.commands.FindCommand;
 import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
 import hextex.io.commands.NewCommand;
@@ -41,7 +42,8 @@ public class ConsoleInterface {
                 dao.add(ref);
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
         this.keyMaker = new KeyMaker(dao);
 
@@ -51,7 +53,9 @@ public class ConsoleInterface {
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand(io));
         commands.put("add filter", new FilterCommand(io, dao, qb, filters));
-        commands.put("remove filter", new RemoveFilterCommand(io, dao, qb, filters));
+        commands.put("remove filter", new RemoveFilterCommand(io, dao, qb,
+                filters));
+        commands.put("find", new FindCommand(dao, io));
         ArrayList<String> mainmenu = new ArrayList();
         mainmenu.add("new");
         mainmenu.add("bibtex");
@@ -70,7 +74,8 @@ public class ConsoleInterface {
     public void run() throws IOException {
         while (true) {
             io.print("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-            String command = io.readLine("Commands: [new] , [bibtex] , [list] , [add filter], [remove filter], [delete] , [help] , [quit]");
+            String command = io.readLine("Commands: [new] [bibtex] [list] [find]"
+                    + " [add filter] [remove filter] [delete] [help] [quit]");
             List<String> matchingCommands = shortcut.returnCommands(command);
 
             if (matchingCommands.isEmpty()) {
@@ -87,7 +92,8 @@ public class ConsoleInterface {
                     sb.append(s).append(", ");
                 }
                 sb.delete(sb.length() - 2, sb.length());
-                io.print("Please type more, found the following matches: " + sb.toString());
+                io.print("Please type more, found the following matches: " 
+                        + sb.toString());
             }
         }
     }

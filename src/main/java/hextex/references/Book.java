@@ -93,6 +93,12 @@ public class Book implements Reference {
 
     @Override
     public String getEasyName() {
+        return "[" + key + "]" + ": " + author + ", \"" + title + "\""
+                + ", " + year;
+    }
+    
+    @Override
+    public String getFullName() {
         return "Book " + key + ": (" + author + ", \"" + title + "\""
                 + ", " + year + ", publisher: " + publisher + ")";
     }

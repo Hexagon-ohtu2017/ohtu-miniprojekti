@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public interface Reference {
 
+    public String getFullName();
     public String getBibtexName();
     public String getEasyName();
     public String getKey();
