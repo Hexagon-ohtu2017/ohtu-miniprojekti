@@ -21,14 +21,10 @@ public class RemoveFilterCommand implements Command {
 
     private InMemoryReferenceDao dao;
     private IO io;
-    private QueryBuilder queryBuilder;
-    private ArrayList<String> filters;
 
-    public RemoveFilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
+    public RemoveFilterCommand(IO io, InMemoryReferenceDao dao) {
         this.io = io;
         this.dao = dao;
-        this.queryBuilder = qb;
-        this.filters = filters;
     }
 
     @Override

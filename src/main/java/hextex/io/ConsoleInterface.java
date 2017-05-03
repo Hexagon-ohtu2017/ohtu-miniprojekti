@@ -37,6 +37,12 @@ public class ConsoleInterface {
         this.dao = new InMemoryReferenceDao();
         this.qb = new QueryBuilder();
         this.filters = new ArrayList();
+        this.keyMaker = new KeyMaker(dao);
+        
+        initialize(io);
+    }
+
+    private void initialize(IO io1) {
         try {
             for (Reference ref : JsonFileManipulator.readJSON()) {
                 dao.add(ref);
@@ -45,17 +51,13 @@ public class ConsoleInterface {
             Logger.getLogger(ConsoleInterface.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
-        this.keyMaker = new KeyMaker(dao);
+        
+        putCommands(io1);
+        ArrayList<String> mainmenu = addCommandsToMainMenu();
+        this.shortcut = new Shortcut(mainmenu);
+    }
 
-        commands.put("new", new NewCommand(io, dao, keyMaker));
-        commands.put("list", new ListCommand(dao, io));
-        commands.put("delete", new DeleteCommand(io, dao));
-        commands.put("bibtex", new BibtexCommand(io, dao));
-        commands.put("help", new HelpCommand(io));
-        commands.put("add filter", new FilterCommand(io, dao, qb, filters));
-        commands.put("remove filter", new RemoveFilterCommand(io, dao, qb,
-                filters));
-        commands.put("find", new FindCommand(dao, io));
+    private ArrayList<String> addCommandsToMainMenu() {
         ArrayList<String> mainmenu = new ArrayList();
         mainmenu.add("new");
         mainmenu.add("bibtex");
@@ -66,8 +68,18 @@ public class ConsoleInterface {
         mainmenu.add("quit");
         mainmenu.add("add filter");
         mainmenu.add("remove filter");
+        return mainmenu;
+    }
 
-        this.shortcut = new Shortcut(mainmenu);
+    private void putCommands(IO io1) {
+        commands.put("new", new NewCommand(io1, dao, keyMaker));
+        commands.put("list", new ListCommand(dao, io1));
+        commands.put("delete", new DeleteCommand(io1, dao));
+        commands.put("bibtex", new BibtexCommand(io1, dao));
+        commands.put("help", new HelpCommand(io1));
+        commands.put("add filter", new FilterCommand(io1, dao));
+        commands.put("remove filter", new RemoveFilterCommand(io1, dao));
+        commands.put("find", new FindCommand(dao, io1));
     }
 
 
@@ -105,4 +117,6 @@ public class ConsoleInterface {
         }
         io.print("Thank you, come again ;)");
     }
+    
+    
 }

@@ -7,12 +7,10 @@ package hextex.io.commands;
 
 import hextex.inmemory.InMemoryReferenceDao;
 import hextex.io.IO;
-import hextex.matcher.Matcher;
 import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  *
@@ -23,7 +21,7 @@ public class FilterCommand implements Command {
     private InMemoryReferenceDao dao;
     private IO io;
 
-    public FilterCommand(IO io, InMemoryReferenceDao dao, QueryBuilder qb, ArrayList<String> filters) {
+    public FilterCommand(IO io, InMemoryReferenceDao dao) {
         this.io = io;
         this.dao = dao;
     }
