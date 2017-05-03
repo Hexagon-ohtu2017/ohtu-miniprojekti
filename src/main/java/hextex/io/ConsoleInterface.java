@@ -8,7 +8,6 @@ import hextex.io.commands.RemoveFilterCommand;
 import hextex.io.commands.FilterCommand;
 import hextex.io.commands.HelpCommand;
 import hextex.io.commands.ListCommand;
-import hextex.io.commands.FindCommand;
 import hextex.io.commands.NewCommand;
 import hextex.json.JsonFileManipulator;
 import hextex.matcher.QueryBuilder;
@@ -48,7 +47,6 @@ public class ConsoleInterface {
 
         commands.put("new", new NewCommand(io, dao, keyMaker));
         commands.put("list", new ListCommand(dao, io));
-        commands.put("find", new FindCommand(dao, io));
         commands.put("delete", new DeleteCommand(io, dao));
         commands.put("bibtex", new BibtexCommand(io, dao));
         commands.put("help", new HelpCommand(io));
@@ -68,10 +66,6 @@ public class ConsoleInterface {
         this.shortcut = new Shortcut(mainmenu);
     }
 
-    public void mainmenu() {
-        MainMenu menu = new MainMenu(io);
-        menu.run();
-    }
 
     public void run() throws IOException {
         while (true) {
