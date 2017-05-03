@@ -93,8 +93,8 @@ public class Book implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Book: (reference: " + key + ", author: " + author + ", title:"
-                + title + ", year: " + year + ", publisher: " + publisher + ")";
+        return "Book " + key + ": (" + author + ", \"" + title + "\""
+                + ", " + year + ", publisher: " + publisher + ")";
     }
 
     @Override
@@ -111,10 +111,10 @@ public class Book implements Reference {
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
     @Override
     public ArrayList<String> addAllFields() {
         ArrayList<String> fields = new ArrayList();

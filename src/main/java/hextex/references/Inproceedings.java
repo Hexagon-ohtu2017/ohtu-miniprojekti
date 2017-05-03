@@ -91,8 +91,8 @@ public class Inproceedings implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Inproceedings: (reference: " + key + ", author: " + author + ", title:"
-                + title + ", book title: " + bookTitle + ", year: " + year + ")";
+        return "Inproceedings " + key + ": (" + author + ", \"" + title + "\""
+                + ", \"" + bookTitle + "\", " + year + ")";
     }
 
     @Override
@@ -109,7 +109,7 @@ public class Inproceedings implements Reference {
                 return true;
             }
         }
-        
+
         return false;
     }
 

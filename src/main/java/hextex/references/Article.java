@@ -115,9 +115,9 @@ public class Article implements Reference {
 
     @Override
     public String getEasyName() {
-        return "Article: (reference: " + key + ", author: " + author + ", title:"
-                + title + ", journal: " + journal + ", volume: "
-                + volume + ", pages: " + pages + ", year: " + year + ")";
+        return "Article " + key + ": (" + author + ", \"" + title + "\""
+                + ", journal: " + journal + ", volume: "
+                + volume + ", pages: " + pages + ", " + year + ")";
     }
 
     @Override
@@ -134,10 +134,10 @@ public class Article implements Reference {
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
     @Override
     public ArrayList<String> addAllFields() {
         ArrayList<String> fields = new ArrayList();
