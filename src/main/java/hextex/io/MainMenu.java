@@ -12,13 +12,18 @@ public class MainMenu implements Element{
   public void run() {
     while (true) {
       System.out.println("Welcome to the mainmenu of HexTexBibtexGenerator 1.0 !");
-      String command = io.readLine("Commands: [new] , [list] , [delete] , [help] , [quit]");
+      String command = io.readLine("Commands: [new] , [list] , [find] , [delete] , [help] , [quit]");
       if (command.equals("new")) {
         io.print("Create a new reference!");
          break;
       }
       if (command.equals("list")) {
           io.print("References:");
+          break;
+      }
+
+      if (command.equals("find")) {
+
           break;
       }
 
