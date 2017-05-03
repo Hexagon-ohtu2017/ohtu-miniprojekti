@@ -105,6 +105,7 @@ public class InMemoryReferenceDaoTest {
         dao.addFilter("proc");
         assertFalse(dao.listFiltered().contains(b));
         assertTrue(dao.listFiltered().contains(ip));
+        assertFalse(dao.listFiltered().contains(a));
     }
 
     @Test
@@ -115,6 +116,8 @@ public class InMemoryReferenceDaoTest {
         dao.addFilter("proc");
         assertFalse(dao.listFiltered().contains(b));
         assertTrue(dao.listFiltered().contains(ip));
+        assertFalse(dao.listFiltered().contains(a));
+        
         
         dao.clearFilters();
         assertTrue(dao.listFiltered().contains(a));
@@ -129,4 +132,9 @@ public class InMemoryReferenceDaoTest {
         assertTrue(dao.listAll().contains(b));
     }
     
+    @Test
+    public void listAllAndListFilteredAreEquivalentWithoutFilters() {
+        assertTrue(dao.listFiltered().containsAll(dao.listAll()));
+        assertTrue(dao.listAll().containsAll(dao.listFiltered()));
+    }
 }
