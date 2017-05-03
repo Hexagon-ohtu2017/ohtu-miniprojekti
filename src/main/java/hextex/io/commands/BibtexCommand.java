@@ -32,13 +32,11 @@ public class BibtexCommand implements Command {
         if (fileName.isEmpty()) {
             return;
         }
-        
-        for (Reference r : references) {
-            try {
-                WriteBibTeX.writeFile(fileName + ".bib", r);
-            } catch (IOException ex) {
-                throw new IllegalStateException(ex.getMessage());
-            }
+
+        try {
+            WriteBibTeX.writeFile(fileName + ".bib", references);
+        } catch (IOException ex) {
+            throw new IllegalStateException(ex.getMessage());
         }
         io.print("Bibtex file \"" + fileName + ".bib" + "\" has been updated");
 
