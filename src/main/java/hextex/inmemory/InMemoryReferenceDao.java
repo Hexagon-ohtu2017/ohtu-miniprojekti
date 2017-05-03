@@ -9,8 +9,10 @@ import hextex.matcher.Matcher;
 import hextex.matcher.QueryBuilder;
 import hextex.references.Reference;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -19,14 +21,12 @@ import java.util.List;
 public class InMemoryReferenceDao implements ReferenceDao {
 
     private List<Reference> references;
-    private List<String> filters;
-//    private List<Matcher> matchers;
+    private Set<String> filters;
     private QueryBuilder queryBuilder;
 
     public InMemoryReferenceDao() {
         references = new ArrayList<>();
-        filters = new ArrayList<>();
-//        matchers = new ArrayList<>();
+        filters = new HashSet<>();
         queryBuilder = new QueryBuilder();
     }
 
@@ -82,7 +82,7 @@ public class InMemoryReferenceDao implements ReferenceDao {
         return matches;
     }
 
-    public List<String> getFilters() {
+    public Set<String> getFilters() {
         return filters;
     }
 
@@ -91,13 +91,7 @@ public class InMemoryReferenceDao implements ReferenceDao {
     }
 
     public void removeFilter(String filter) {
-        Iterator iter = filters.iterator();
-        while (iter.hasNext()) {
-            Object next = iter.next();
-            if (next.equals(filter)) {
-                iter.remove();
-            }
-        }
+        filters.remove(filter);
     }
     
 }
