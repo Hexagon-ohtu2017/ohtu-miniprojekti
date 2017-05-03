@@ -24,15 +24,20 @@ public class KeyMaker {
     }
 
     public String generateKey(String authors, int year) {
-        authors.trim(); //remove extra dashes around the authors
+        authors.trim();
         String key = "";
-        if (manyAuthors(authors)) {
+        if (authors.contains(",")) {
             key = keyMakerMultipleAuthors(authors, year, key);
+        } else if (authors.contains(" ")) { // if no dots, only one author
+            List<String> authorFirstAndLastName = Arrays.asList(authors.split(" "));
+            key = authorFirstAndLastName.get(0).substring(0, 3) + year;
         } else {
-            key = oneAuthorKey(authors, key, year);
+            key = authors.substring(0, 3) + year;
         }
-        if (referenceExistsAlready(key)) {
-            key = keyMakerSameYear(key);
+        for (Reference ref : dao.getReferences()) {
+            if (ref.getKey().equals(key)) {
+                key = keyMakerSameYear(key);
+            }
         }
         return key;
     }
@@ -40,28 +45,20 @@ public class KeyMaker {
     public String keyMakerMultipleAuthors(String authors, int year, String key) {
         List<String> authorList = Arrays.asList(authors.split(",[ ]*"));
         List<String> lastNames = getLastNames(authorList); // get only lastnames
-        String lastName = "";
         for (int i = 0; i < lastNames.size(); i++) {
-            lastName = lastNames.get(i);
-            key = nameCutter(key, lastName);
+            key += lastNames.get(i).substring(0, 3);
         }
         key += year;
         return key;
     }
 
-    public String oneAuthorKey(String author, String key, int year) {
-        List<String> authorFirstAndLastName = Arrays.asList(author.split(" "));
-        String lastName = authorFirstAndLastName.get(0);
-        key = nameCutter(key, lastName) + year;
-        return key;
-    }
-
     public List<String> getLastNames(List<String> authorList) {
         ArrayList<String> lastNames = new ArrayList<>();
-        for (String name : authorList) {
-            String[] lastAndFirst = name.split(" ");
-            String lastName = lastAndFirst[0];
-            lastNames.add(lastName);
+        int helper = 0;
+        for (String name : authorList) { 
+            if (helper % 2 == 0) {
+                lastNames.add(name);
+            }
         }
         return lastNames;
     }
@@ -81,7 +78,7 @@ public class KeyMaker {
         int helper = 1;
         while (true) {
             for (Reference ref : dao.getReferences()) {
-                if (referenceExistsAlready(key)) {
+                if (ref.getKey().equals(key)) {
                     StringBuilder sb = new StringBuilder(key);
                     sb.setCharAt(key.length() - 1, alphabets.charAt(helper));
                     key = sb.toString();
@@ -93,25 +90,4 @@ public class KeyMaker {
         return key;
     }
 
-    public String nameCutter(String key, String lastName) {
-        if (lastName.length() >= 3) {
-            key += lastName.substring(0, 3);
-        } else {
-            key += lastName;
-        }
-        return key;
-    }
-
-    public boolean referenceExistsAlready(String key) {
-        for (Reference ref : dao.getReferences()) {
-            if (ref.getKey().equals(key)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean manyAuthors(String authors) {
-        return authors.contains(",");
-    }
 }

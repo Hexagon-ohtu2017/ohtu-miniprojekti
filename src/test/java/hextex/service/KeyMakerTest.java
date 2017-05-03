@@ -37,16 +37,6 @@ public class KeyMakerTest {
     }
 
     @Test
-    public void testGetLastNames() {
-        List<String> authorList = Arrays.asList(manyAuthors.split(",[ ]*"));
-        List<String> lastNames = new ArrayList<>();
-        lastNames.add("Doe");
-        lastNames.add("Doe");
-        lastNames.add("Doe");
-        assertEquals(km.getLastNames(authorList).toString(), lastNames.toString());
-    }
-
-    @Test
     public void testGenerateKeyMultipleAuthors() {
         assertEquals(km.generateKey(manyAuthors, year), "DoeDoeDoe2017");
     }
@@ -73,17 +63,5 @@ public class KeyMakerTest {
         assertEquals(km.addCharacters(key), "Tes2017b");
     }
     
-    @Test
-    public void testShortName() { 
-        String authors = "Doe Ann, Doe John, Pi HaoZhen";
-        assertEquals(km.generateKey(authors, year), "DoeDoePi2017");
-    }
-    
-    @Test
-    public void testNameCutter() {
-        String key = "";
-        String name = "Möttönen";
-        assertEquals(km.nameCutter(key, name), "Möt");
-    }
 
 }

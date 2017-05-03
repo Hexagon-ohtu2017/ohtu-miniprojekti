@@ -1,17 +1,8 @@
-{"type":"Book","author":"Laitinen Ilari, Vihavainen Arto","title":"Kirja ohjelmointiin","year":2000,"publisher":"Otava","key":"LaiVih2000"}
-{"type":"Book","author":"kirja","title":"kirja","year":1994,"publisher":"otava","key":"kir1994a"}
+{"type":"Book","author":"Laitinen Ilari","title":"fasgf","year":2012,"publisher":"fsaf","key":"Lai2012"}
+{"type":"Book","author":"Laitinen Ilari","title":"saffsa","year":2012,"publisher":"safsa","key":"Lai2012a"}
+{"type":"Book","author":"Laitinen Ilari","title":"sfasa","year":2012,"publisher":"saf","key":"Lai2012b"}
+{"type":"Book","author":"Laitinen Ilari","title":"safsa","year":2012,"publisher":"safs","key":"Lai2012b"}
 {"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Inproceedings","author":"Joku Arttu","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"Jok2017"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
 {"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017a"}
-{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017a"}
-{"type":"Book","author":"kirja","title":"kirja","year":1994,"publisher":"otava","key":"kir1994a"}
-{"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017a"}
+{"type":"Article","author":"otsikko","title":"otsikko","journal":"lehti","volume":1,"pages":"10","year":2017,"key":"ots2017b"}
+{"type":"Inproceedings","author":"otsikko","title":"otsikko","bookTitle":"kirjanNimi","year":2017,"key":"ots2017c"}
