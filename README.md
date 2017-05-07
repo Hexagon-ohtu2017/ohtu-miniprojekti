@@ -139,8 +139,8 @@ Burndown-käyrä: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF
 #### Käyttäjä pystyy generoimaan bibTex-tiedoston
 
 ###### Hyväksymistestit
-1. Viiteistä muodostetaan bibTex-tiedosto
-2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda
+1. Viiteistä muodostetaan bibTex-tiedosto.
+2. Ainakin yksi viite on oltava luotuna, jotta tiedosto voidaan luoda.
 
 #### Käyttäjä pystyy lisäämään book-tyyppisen viitteen ilman ääkkösiä ja täyttämällä kaikki kentät(author,title,year,publisher)
 
@@ -149,6 +149,6 @@ Burndown-käyrä: https://docs.google.com/spreadsheets/d/1oKbQFujuJDv9CVd9f1UhZF
 
 2. Lisättävän viitteen oltava book-kategorian viite.
 
-3. Jos käyttäjä jättää pakollisen kentän täyttämättä annetaan virhe ilmoitus
+3. Jos käyttäjä jättää pakollisen kentän täyttämättä annetaan virheilmoitus.
 
-4. Viite luodaan, jos käyttäjä täyttää book-kategorian kaikki syötteet ja ilman ääkkösiä
+4. Viite luodaan, jos käyttäjä täyttää book-kategorian kaikki syötteet ja ilman ääkkösiä.
